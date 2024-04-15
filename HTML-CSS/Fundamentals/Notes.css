@@ -1,0 +1,922 @@
+/* 
+What is HTML?
+HTML stands for Hyper Text Markup Language, and it is the standard markup language for creating Web pages. We use HTML to describes the structure of a Web page. When we create an HTML file first the HTML file always must be called index.html. 
+
+HTML consists elements (tags) that discribes different types of content on the web page like paragraph, link, heading, images and more. Some elements can contain other elements that are colled chaild elements.
+Example for chaild element:
+<ul>
+    <li></li>
+    <li></li>
+</ul>
+*/
+
+/* 
+What are Attributes in HTML?
+Attributes in HTML are pieces of data that we can use to describe elements. They provide additional information about HTML elements.
+Example:
+img element uses attributes to show a image
+<img src="img.png"/>
+src (source) is the attribute
+
+The <a> tag defines a hyperlink. The href attribute specifies the URL of the page the link goes to:
+<a href="website.com"><a/>
+*/
+
+/* 
+meta data means data about the data
+*/
+
+/* 
+Semantic Elements in HTML
+A semantic element clearly describes its meaning to both the browser and the developer.
+
+Examples of non-semantic elements: 
+<div> and <span> - Tells nothing about its content.
+
+Examples of semantic elements: 
+<form>, <table>, and <article> - Clearly defines its content.
+
+Many web sites contain HTML code like: <div id="nav"> <div class="header"> <div id="footer"> to indicate navigation, header, and footer.
+
+In HTML there are some semantic elements that can be used to define different parts of a web page:  
+<article>
+<aside>
+<details>
+<figure>
+<figcaption>
+<footer>
+<header>
+<main>
+<mark>
+<nav>
+<section>
+<summary>
+<time>
+*/
+
+/* 
+What is CSS
+CSS stands for Cascading Style Sheets
+CSS describes the visual style and presentation of the content written in HTML
+CSS consists of selectors that have properties that we use to format the content. Every property consists of a value and together they are called declaration (styles). All the code after the selector is called a declaration block. The selector + declaration block forms a CSS rule
+Example for a CSS rule:
+h1 { - h1 is a selector
+    color: blue; - color is a property, blue is the value, and together thy are declarations (style)
+}
+all the code after the selector is called a declaration block. The selector + declaration block forms a CSS rule
+*/
+
+/* 
+They are 3 ways of writing a CSS - inline, internal and external
+- Inline CSS is writing the CSS inside of the HTML element (tag). Inline styles should never be used.
+    Exanmple of inline CSS
+    <h1 style="color: blue">The Code Magazine</h1>
+
+- Internal CSS we creat inside the <head> element, a <style> element in wich we write our CSS code. This is not very practical if we have a lot of CSS code.
+    Example for internal CSS
+    <head>
+        <style>
+            h1 {
+                color: blue;
+            }
+        </style>
+    </head>
+
+- External CSS is a separating file that contains our CSS code and it is linked with the HTML file. 
+We connect HTML and external CSS file by writing in the <head> element (tag) a link to the external CSS file (style.css): <link rel="stylesheet" href="styles.css"/> 
+*/
+
+/* 9 Styling Text 
+- font-size - specifies the size of the text. It can be used numbers or keywords. By default text size on a web page is 16 px.
+- font-family - specifies different fonts for the text.
+- text-transform - we can turn the text with uppercase or lowercase or ect.
+- font-style - we can turn the text with italic font or other font that we can use.
+- line-height - specifies the height of a line. Negative values are not allowed.
+- text-align - specifies the horizontal alignment of text in an element.
+*/
+
+/* 10 Combining Selectors
+A CSS selector can contain more than one simple selector. Between the simple selectors, we can include a combinator.
+
+We can give one rule to many selectors by writing them one by one with comas (,). This is called a list selector.
+
+When applying the same styles to elements matching different criteria, grouping the selectors in a comma-separated list can improve consistency while reducing the size of style sheets.
+
+- Single line grouping
+This example shows grouping selectors in a single line using a comma-separated list.
+h1, h2, h3, h4, h5, h6 {
+  font-family: helvetica;
+}
+
+- Multi line grouping
+This example shows grouping selectors in multiple lines using a comma-separated list.
+#main,
+.content,
+article,
+h1 + p {
+  font-size: 1.1em;
+}
+
+Also we can combine simple selectors. There are four different combinators in CSS:
+- descendant selector (space)
+- child selector (>)
+- adjacent sibling selector (+)
+- general sibling selector (~)
+
+Descendant selector (space)
+Descendant selector matches all elements that are descendants of a specified element.
+Example
+div p {
+  background-color: yellow;
+}
+
+Child Selector (>)
+The child selector selects all elements that are the children of a specified element.
+Example
+div > p {
+  background-color: yellow;
+}
+
+Adjacent Sibling Selector (+)
+The adjacent sibling selector is used to select an element that is directly after (immediately followed) another specific element. Sibling elements must have the same parent element, and "adjacent" means "immediately following".
+Example
+div + p {
+  background-color: yellow;
+}
+
+General Sibling Selector (~)
+The general sibling selector selects all elements that are siblings of a specified element.
+The following example selects all <p> elements that are siblings of <div> elements: 
+Example
+div ~ p {
+  background-color: yellow;
+}
+*/
+
+/* 11. Class and ID Selectors
+
+CSS selectors are used to "find" (or select) the HTML elements you want to style.
+
+We can divide CSS selectors into five categories:
+
+- Simple selectors (select elements based on name, id, class);
+- Combinator selectors (select elements based on a specific relationship between them);
+- Pseudo-class selectors (select elements based on a certain state);
+- Pseudo-elements selectors (select and style a part of an element);
+- Attribute selectors (select elements based on an attribute or attribute value).
+
+The CSS id Selector
+The id selector uses the id attribute of an HTML element to select a specific element.
+
+The id of an element is unique within a page, so the id selector is used to select one unique element!
+
+To select an element with a specific id, write a hash (#) character, followed by the id name of the element. If the name of the id is more than one word we separated the word with dash (-).
+Example for multy-word id
+related-suthor
+
+Example for id selector
+The CSS rule below will be applied to the HTML element with id="related-suthor": 
+
+#related-suthor {
+  text-align: center;
+  color: red;
+}
+
+The CSS class Selector
+The class selector selects HTML elements with a specific class attribute.
+
+To select elements with a specific class, write a period (.) character, followed by the class name. If the name of the sclass is more than one word we separated the word with dash (-).
+Example for multy-word class
+related-suthor
+
+Example for class selector
+In this example all HTML elements with class="related-suthor" will be red and center-aligned: 
+
+.related-suthor {
+  text-align: center;
+  color: red;
+}
+ */
+
+/* 
+ 12. Working With Colors
+
+ - RGB model: 
+ Everu color can be represented by combination of red, green and blue. Each of the 3 base color (red, green and blue) can take a value between 0 and 255, a <percentage> between 0% and 100%, or the keyword none, which represent the red, green, and blue channels, respectively.
+ Each parameter (red, green, and blue) defines the intensity of the color with a value between 0 and 255.
+
+For example, rgb(255, 0, 0) is displayed as red, because red is set to its highest value (255), and the other two (green and blue) are set to 0.
+
+Another example, rgb(0, 255, 0) is displayed as green, because green is set to its highest value (255), and the other two (red and blue) are set to 0.
+
+To display black, set all color parameters to 0, like this: rgb(0, 0, 0).
+
+To display white, set all color parameters to 255, like this: rgb(255, 255, 255).  
+ Example of RGB:
+ div.comma-separated {
+  background-color: rgb(255, 0, 0, 0.5);
+}
+- RGBA (RGB with transparence)
+RGBA color values are an extension of RGB color values with an Alpha channel - which specifies the opacity for a color.
+
+An RGBA color value is specified with:
+
+rgba(red, green, blue, alpha)
+
+The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all):
+Example:
+h1 {
+  background-color:rgba(255, 99, 71, 0.2);
+}
+
+- Hexadecimal Colors
+Hexadecimal color values are supported in all browsers.
+
+A hexadecimal color is specified with:
+
+#rrggbb
+
+Where rr (red), gg (green) and bb (blue) are hexadecimal integers between 00 and ff, specifying the intensity of the color.
+
+For example, #ff0000 is displayed as red, because red is set to its highest value (ff), and the other two (green and blue) are set to 00.
+
+Another example, #00ff00 is displayed as green, because green is set to its highest value (ff), and the other two (red and blue) are set to 00.
+
+To display black, set all color parameters to 00, like this: #000000.
+
+To display white, set all color parameters to ff, like this: #ffffff.
+Example:
+div {
+    background-color: #00bfff;
+    color: #ffffff;
+}
+
+- 3 Digit HEX Value
+Sometimes you will see a 3-digit hex code in the CSS source.
+
+The 3-digit hex code is a shorthand for some 6-digit hex codes.
+
+The 3-digit hex code has the following form:
+
+#rgb
+
+Where r, g, and b represent the red, green, and blue components with values between 0 and f.
+
+The 3-digit hex code can only be used when both the values (RR, GG, and BB) are the same for each component. So, if we have #ff00cc, it can be written like this: #f0c.
+Example:
+body {
+  background-color: #fc9; //same as #ffcc99 
+}
+
+In real world we use Hexadecimal Colors, and RGB when we need transparence.
+ */
+
+/* 
+      13. Pseudo-classes
+Pseudo-classes are used to select and style elements based on their state or position in the document tree. They allow you to apply styles to elements in specific conditions without the need for additional classes or JavaScript. Pseudo-classes are denoted by a colon (:) followed by the name of the pseudo-class.
+
+Here are some commonly used pseudo-classes:
+1. hover: This pseudo-class is used to select and style an element when the user hovers over it with the mouse.
+Example:
+a:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+2. :active: This pseudo-class selects an element while it's being activated, such as when a button is being pressed.
+Example:
+button:active {
+  background-color: #ccc;
+}
+
+3. :focus: Targets an element when it receives focus, often used with form elements like input fields.
+Example:
+input:focus {
+  border: 2px solid blue;
+}
+
+4. :first-child: Selects the first child elements of a parent.
+Example:
+li:first-child {
+  font-weight: bold;
+}
+
+5. :last-child: Selects the last child elements of a parent.
+Example:
+li:last-child {
+  color: green;
+}
+
+6. :nth-child(n): Selects elements based on their position in the parent, where n is a keyword, a number, or a formula.
+Example:
+li:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+li:nth-child(even) {
+  background-color: #ddd;
+}
+
+li:nth-child(2) {
+  background-color: black;
+}
+
+Overall a Pseudo-classes are used to define a special state of an element.
+
+For example, it can be used to:
+- Style an element when a user mouses over it
+- Style visited and unvisited links differently
+- Style an element when it gets focus
+ */
+
+/* 
+      14. Styling Hyperlinks
+Styling hyperlinks in CSS allows you to customize their appearance to make them visually appealing and fit the overall design of your website. Here are some common styles you can apply to hyperlinks using CSS:
+
+1. Basic Styling:
+Default link styles
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+Hover effect
+a:hover {
+  text-decoration: underline;
+}
+
+Visited link styles
+a:visited {
+  color: #551a8b;
+}
+
+Active (clicked) link styles
+a:active {
+  color: #ff4500;
+}
+
+2. Removing Underlines:
+Remove underlines from all links
+a {
+  text-decoration: none;
+}
+
+3. Button-like Links:
+Button-like styling
+a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0077cc;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+a:hover {
+  background-color: #0056b3;
+}
+
+4. Changing Link Colors for Different States:
+Default link color
+a {
+  color: #0077cc;
+}
+
+Hover effect
+a:hover {
+  color: #0056b3;
+}
+
+Visited link color
+a:visited {
+  color: #551a8b;
+}
+
+Active (clicked) link color
+a:active {
+  color: #ff4500;
+}
+
+5. Underline on Hover:
+Underline only on hover
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+!-Link states-!
+The first thing to understand is the concept of link states — different states that links can exist in. These can be styled using different pseudo-classes:
+
+- Link: A link that has a destination (i.e., not just a named anchor), styled using the     :link pseudo class.
+
+- Visited: A link that has already been visited (exists in the browser's history), styled using the :visited pseudo class.
+
+- Hover: A link that is hovered over by a user's mouse pointer, styled using the :hover pseudo class.
+- Focus: A link that is focused (e.g., moved to by a keyboard user using the Tab key or something similar, or programmatically focused using HTMLElement.focus()) — this is styled using the :focus pseudo class.
+
+- Active: A link that is activated (e.g., clicked on), styled using the :active pseudo class.
+
+!--This is the order in wich we style links (LVHA)--!
+:link
+:visited
+:hover
+:active
+ */
+
+/* 
+      15. Inheritance and the Universal Selector 
+- Inheritance:
+Inheritance is the mechanism by which properties from parent elements are passed down to their child elements in the HTML document. 
+Not all properties are inherited. It is mostly the once related to text:
+- font-family;
+- font-size;
+- font-weight;
+- font-style;
+- color;
+- line-height;
+- letter-spacing;
+- text-align;
+- text-transform;
+- text-shadow;
+- list-style
+- and etc. 
+only certain ones are designed to be inherited by default. 
+For example, properties like color, font-family, font-size, and line-height are inherited, while properties like margin or padding are not.
+
+Here's an example of how inheritance works:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body {
+      color: blue; This color will be inherited by the paragraphs 
+      font-family: Arial, sans-serif; This font will be inherited by the paragraphs
+    }
+
+    p {
+      Paragraphs will inherit color and font-family from the body 
+      margin: 10px; This property is not inherited 
+    }
+  </style>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <p>Another paragraph.</p>
+</body>
+</html>
+
+ In this example, the color and font-family properties set on the body element are inherited by the p elements within it.
+
+ - Universal Selector in CSS:
+The universal selector (*) is used to select all elements on a page. It matches any element type. You can use it to apply a style to all elements or to reset default styles globally. It has the lowest priority so it is very easy to override it.
+
+Here's an example:
+Apply a margin of 0 and padding of 0 to all elements
+* {
+  margin: 0;
+  padding: 0;
+}
+
+Apply a border to all elements for demonstration purposes
+* {
+  border: 1px solid black;
+}
+
+In the first example, the universal selector is used to remove default margins and padding from all elements. In the second example, it adds a border to all elements. Keep in mind that using the universal selector to target all elements should be done judiciously, as it can lead to unintended consequences and negatively impact performance.
+
+These concepts are fundamental to understanding and effectively using CSS for styling web pages.
+ */
+
+/* 
+      16. The CSS Box Model
+
+In CSS, the term "box model" is used when talking about design and layout.Box Model is a fundamental concept that describes the layout and spacing of elements on a web page.
+
+The CSS box model is essentially a box that wraps around every HTML element (Each HTML element is considered a box). It consists of: content, padding, borders and margins.
+
+1. Content:
+
+- The actual content of the box, such as text, images, or other media.
+- It is enclosed by the padding, border, and margin.
+
+2. Padding:
+
+- The space between the content and the border.
+- Padding is transparent and does not have a background color by default, but you can set it using CSS.
+
+3. Border:
+
+- The border surrounds the padding and content.
+- It is optional, and you can control its width, style, and color using CSS properties.
+
+4. Margin:
+
+- The space outside the border, creating a gap between the border of one box and the border of its neighboring box.
+- Like padding, margin is transparent and does not have a background color by default.
+
+The total width or height of an element is calculated as follows:
+
+Total width = left border + left padding + Content width + right padding +  right border
+
+Total height = top border + top padding + Content height + bottom padding +  bottom border
+
+Understanding the CSS Box Model is crucial for effectively styling and positioning elements on a webpage. It allows developers to control the spacing and layout of elements, ensuring a consistent and visually appealing design. Additionally, when using CSS properties like width, height, padding, border, and margin, you are directly manipulating the different components of the box model.
+ */
+
+/* 
+      17. Using Margins and Paddings
+
+Margins and Paddings are essential properties that allow you to control the spacing around and within elements. They play a crucial role in defining the layout and appearance of your web page.
+
+Margins:
+Margins define the space outside an element. They create gaps between elements on a page and are not affected by the background color or content of the element.
+Example:
+/* Set margin for all sides
+selector {
+  margin: value;
+}
+
+/* Set margin for individual sides
+selector {
+  margin-top: value;
+  margin-right: value;
+  margin-bottom: value;
+  margin-left: value;
+}
+
+The margin property has a shorthand property for the following individual margin properties:
+- margin-top
+- margin-right
+- margin-bottom
+- margin-left
+
+So, here is how it works:
+
+1. If the margin property has four values:
+margin: 25px 50px 75px 100px;
+- top margin is 25px
+- right margin is 50px
+- bottom margin is 75px
+- left margin is 100px
+
+Example:
+Use the margin shorthand property with four values:
+p {
+  margin: 25px 50px 75px 100px;
+}
+
+2. If the margin property has three values:
+margin: 25px 50px 75px;
+- top margin is 25px
+- right and left margins are 50px
+- bottom margin is 75px
+
+Example:
+Use the margin shorthand property with three values: 
+p {
+  margin: 25px 50px 75px;
+}
+
+3. If the margin property has two values:
+margin: 25px 50px;
+- top and bottom margins are 25px
+- right and left margins are 50px
+
+Example:
+Use the margin shorthand property with two values: 
+p {
+  margin: 25px 50px;
+}
+
+4. If the margin property has one value:
+
+margin: 25px;
+- all four margins are 25px
+
+Example:
+Use the margin shorthand property with one value: 
+p {
+  margin: 25px;
+}
+
+5. The auto Value
+You can set the margin property to auto to horizontally center the element within its container.
+
+The element will then take up the specified width, and the remaining space will be split equally between the left and right margins.
+
+Example:
+Use margin: auto:
+div {
+  width: 300px;
+  margin: auto;
+  border: 1px solid red;
+}
+
+6. The inherit Value
+This example lets the left margin of the <p class="ex1"> element be inherited from the parent element (<div>):
+
+Example:
+Use of the inherit value:
+div {
+  border: 1px solid red;
+  margin-left: 100px;
+}
+
+p.ex1 {
+  margin-left: inherit;
+}
+
+Values:
+- auto - the browser calculates the margin;
+- length - specifies a margin in px, pt, cm, etc.;
+- % - specifies a margin in % of the width of the containing element;
+- inherit - specifies that the margin should be inherited from the parent element.
+Tip: Negative values are allowed.
+
+Margin Collapse:
+Top and bottom margins of elements are sometimes collapsed into a single margin that is equal to the largest of the two margins.
+
+This does not happen on left and right margins! Only top and bottom margins!
+
+Example:
+h1 {
+  margin-bottom: 50px;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+In the example above, the <h1> element has a bottom margin of 50px and the <h2> element has a top margin set to 20px.
+
+Common sense would seem to suggest that the vertical margin between the <h1> and the <h2> would be a total of 70px (50px + 20px). But due to margin collapse, the actual margin ends up being 50px. This is because when we have margin collapsing only one of the margins is visible on the page, and that is usually the larger one. 50px in this case.
+
+---------------------------------------------------------------------------------------------------------------
+
+Paddings:
+Paddings define the space between the content of an element and its border. Paddings contribute to the overall size of the element.
+
+Example:
+/* Set padding for all sides
+selector {
+  padding: value;
+}
+
+/* Set padding for individual sides
+selector {
+  padding-top: value;
+  padding-right: value;
+  padding-bottom: value;
+  padding-left: value;
+}
+
+Padding - Shorthand Property:
+To shorten the code, it is possible to specify all the padding properties in one property.
+
+The padding property is a shorthand property for the following individual padding properties:
+
+- padding-top
+- padding-right
+- padding-bottom
+- padding-left
+
+So, here is how it works:
+
+1. If the padding property has four values:
+
+padding: 25px 50px 75px 100px;
+- top padding is 25px
+- right padding is 50px
+- bottom padding is 75px
+- left padding is 100px
+
+Example:
+Use the padding shorthand property with four values:
+div {
+  padding: 25px 50px 75px 100px;
+}
+
+2. If the padding property has three values:
+
+padding: 25px 50px 75px;
+- top padding is 25px
+- right and left paddings are 50px
+- bottom padding is 75px
+
+Example:
+Use the padding shorthand property with three values: 
+div {
+  padding: 25px 50px 75px;
+}
+
+3. If the padding property has two values:
+
+padding: 25px 50px;
+- top and bottom paddings are 25px
+- right and left paddings are 50px
+
+Example:
+Use the padding shorthand property with two values: 
+div {
+  padding: 25px 50px;
+}
+
+4. If the padding property has one value:
+
+padding: 25px;
+- all four paddings are 25px
+
+Example:
+Use the padding shorthand property with one value: 
+div {
+  padding: 25px;
+}
+
+It is good practice to use the universal selector to reset the page margin and padding before creating the page. In this way, you can control more efficiently margin and paddings.
+At the beginning of the CSS page, we must type:
+* {
+  margin: 0;
+  padding: 0 ;
+}
+*/
+
+/* 
+      18. Adding Dimensions
+
+In CSS, adding dimensions typically refers to specifying the size or dimensions of an element on a webpage. There are various properties you can use to control the dimensions of HTML elements. Here are some of the key properties:
+
+1. Width and Height:
+
+  - You can set the width and height of an element using the width and height properties, respectively.
+  Example:
+  div {
+  width: 200px;
+  height: 100px;
+}
+
+The height and width properties may have the following values:
+
+  - auto - This is default. The browser calculates the height and width
+  - length - Defines the height/width in px, cm, etc.
+  - % - Defines the height/width in percent of the containing block
+  - initial - Sets the height/width to its default value
+  - inherit - The height/width will be inherited from its parent value
+
+2. Max-Width and Max-Height:
+
+  - These properties define the maximum width and height an element can have. The element will not exceed these dimensions even if its content is larger.
+  Example:
+  div {
+  max-width: 400px;
+  max-height: 200px;
+}
+
+The max-width can be specified in length values, like px, cm, etc., or in percent (%) of the containing block, or set to none (this is default. Means that there is no maximum width).
+
+The problem with the <div> above occurs when the browser window is smaller than the width of the element (500px). The browser then adds a horizontal scrollbar to the page.
+
+Using max-width instead, in this situation, will improve the browser's handling of small windows.
+
+Tip: 
+Drag the browser window to smaller than 500px wide, to see the difference between the two divs!
+
+Note: 
+If you for some reason use both the width property and the max-width property on the same element, and the value of the width property is larger than the max-width property; the max-width property will be used (and the width property will be ignored).
+
+3. Min-Width and Min-Height:
+
+  - These properties define the minimum width and height an element can have. The element will not shrink below these dimensions even if its content is smaller.
+  Example:
+  div {
+  min-width: 100px;
+  min-height: 50px;
+}
+
+4. Box Sizing:
+
+  - The box-sizing property allows you to control how the dimensions of an element are calculated, taking into account the padding and border or excluding them.
+  Example:
+  .example {
+  box-sizing: border-box; - includes padding and border in the total width/height
+}
+
+5. Viewport Units:
+
+  - CSS provides viewport units (vw for width, vh for height, vmin, and vmax) that are relative to the viewport size.
+  Example:
+  .example {
+  width: 50vw; - 50% of the viewport width
+  height: 30vh; - 30% of the viewport height
+}
+
+These are just a few examples of how you can control the dimensions of elements in CSS. Depending on your layout and design requirements, you may use a combination of these properties to achieve the desired results.
+*/
+
+/*      19. Centering our Page 
+
+Centering a page in CSS can be achieved using various techniques, and the method you choose might depend on the specific layout and design requirements. Here are a few commonly used methods to center a page horizontally and vertically:
+The teacher use this trick:
+frst you need to wrapp the page in a container like a div for example. Then in in css you write:
+div {
+  width: 800px;
+  margin: 0 auto;  - margin-left: auto; margin-right: auto;
+}
+*/
+
+/*      20 .CSS Theory #4_ Types of Boxes 039 
+-------------------------------------------------------
+
+Every HTML element has a default display value, depending on what type of element it is.
+
+The two most common display values are block and inline.
+
+- Block-level Elements (boxes)
+A block-level element (boxes) always starts on a new line, and the browsers automatically add some space (a margin) before and after the element.
+
+A block-level element always takes up the full width (row) available (stretches out to the left and right as far as it can).
+
+Two commonly used block elements are: <p> and <div>.
+
+Here are the block-level elements in HTML:
+
+<address>
+<article>
+<aside>
+<blockquote>
+<canvas>
+<dd>
+<div>
+<dl>
+<dt>
+<fieldset>
+<figcaption>
+<figure>
+<footer>
+<form>
+<h1>-<h6>
+<header>
+<hr>
+<li>
+<main>
+<nav>
+<noscript>
+<ol>
+<p>
+<pre>
+<section>
+<table>
+<tfoot>
+<ul>
+<video>
+
+- Inline Elements
+An inline element does not start on a new line.
+
+An inline element only takes up as much width as necessary.
+
+It is very importan to know that:
+The height and width propartys do not apply.
+Padding and Margins are applied only horizontally (left and right), and not on top and bottom. 
+
+Here are the inline elements in HTML:
+
+<a>
+<abbr>
+<acronym>
+<b>
+<bdo>
+<big>
+<br>
+<button>
+<cite>
+<code>
+<dfn>
+<em>
+<i>
+<img>
+<input>
+<kbd>
+<label>
+<map>
+<object>
+<output>
+<q>
+<samp>
+<script>
+<select>
+<small>
+<span>
+<strong>
+<sub>
+<sup>
+<textarea>
+<time>
+<tt>
+<var>
+
+
+*/

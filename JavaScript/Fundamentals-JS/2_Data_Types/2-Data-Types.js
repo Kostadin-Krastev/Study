@@ -52,7 +52,7 @@ console.log(typeof null);
 */
 
 /*Dynamic typing
-When we change the value of a veriable we do not need to write again keyword let. 
+When we change the value of a variable we do not need to write again keyword let. 
 Example:
 let age = 39;
 age = 40; 

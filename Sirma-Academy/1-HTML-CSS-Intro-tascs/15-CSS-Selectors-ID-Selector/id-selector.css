@@ -1,0 +1,15 @@
+span {
+  font-weight: bold;
+}
+
+a {
+  color: blue;
+}
+
+#next-to-last-paragraph {
+  color: red;
+}
+
+#last-paragraph {
+  color: green;
+}

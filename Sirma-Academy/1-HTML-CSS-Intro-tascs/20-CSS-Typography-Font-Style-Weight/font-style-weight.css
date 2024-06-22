@@ -1,0 +1,9 @@
+.italic-bold {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.oblique-bolder {
+  font-style: oblique;
+  font-weight: bolder;
+}

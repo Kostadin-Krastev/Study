@@ -11,4 +11,9 @@ let language;
 const country = "Bulgaria";
 let population = 5000000;
 
-console.log(isIsland, population, country, language);
+console.log(
+  typeof isIsland,
+  typeof population,
+  typeof country,
+  typeof language
+);

@@ -19,11 +19,6 @@ const country = "Bulgaria";
 const continent = "Europe";
 let population = 5000000;
 const numNeighbours = 5;
-/*speaks english, has less than 50 million people and is not an
-island. 
-'You should live in Portugal :)'. 
-'Portugal does not meet your criteria :('
-*/
 
 if (language === "english" && population < 50000000 !== isIsland) {
   console.log(`You should live in ${country}`);

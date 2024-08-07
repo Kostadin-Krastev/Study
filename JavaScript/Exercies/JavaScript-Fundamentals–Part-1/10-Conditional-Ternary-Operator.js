@@ -11,7 +11,8 @@ one word changes between these two sentences!
 const country = "Bulgaria";
 let population = 5000000;
 
-const ifPopulationisGreater =
-  population > 33000000
-    ? console.log(`${country}'s population is above average`)
-    : console.log(`${country}'s population is below average`);
+console.log(
+  `${country}'s population is ${
+    population > 33000000 ? "above" : "below"
+  } average`
+);

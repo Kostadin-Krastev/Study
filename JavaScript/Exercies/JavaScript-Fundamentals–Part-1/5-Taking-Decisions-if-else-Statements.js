@@ -13,8 +13,6 @@ const country = "Bulgaria";
 const continent = "Europe";
 let population = 5000000;
 
-// Task 1
-
 if (population > 33000000) {
   console.log(`${country}'s population is above average`);
 } else {

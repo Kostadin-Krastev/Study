@@ -28,3 +28,16 @@ console.log(splitCountry);
 // Task 2
 const increasePopulation = ++population;
 console.log(increasePopulation);
+
+// Task 3
+let populationFinland = 6000000;
+const hasBulgariaHaveMorePopulation = population >= populationFinland;
+console.log(hasBulgariaHaveMorePopulation);
+
+// Task 4
+const averageCountryPopulation = 33000000;
+const isBulgariaPopulationSmaller = population >= averageCountryPopulation;
+console.log(isBulgariaPopulationSmaller);
+
+// Task 5
+let description = `${country} is in ${continent}, and it's ${population} people speaks ${language}.`;

@@ -35,4 +35,4 @@ const bmiJohn = kgJohn / heightJohn ** 2;
 
 // Create a Boolean variable 'markHigherBMI'
 const markHigherBMI = bmiMark > bmiJohn;
-console.log(markHigherBMI);
+console.log(bmiMark, bmiJohn, markHigherBMI);

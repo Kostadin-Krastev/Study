@@ -39,10 +39,3 @@ neighbouring[1] = "New-Macedonia";
 neighbouring[2] = "New-Greece";
 
 console.log(neighbouring);
-
-// Can be done with shorter version like this:
-console.log(
-  (neighbouring[0] = "New-short-Serbia"),
-  (neighbouring[1] = "New-short-Macedonia"),
-  (neighbouring[2] = "New-short-Greece")
-);

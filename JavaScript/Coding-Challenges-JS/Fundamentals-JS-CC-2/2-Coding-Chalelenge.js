@@ -13,5 +13,27 @@ below
 3. Create an array 'tips' containing the tip value for each bill, calculated from
 the function you created before
 4. Bonus: Create an array 'total' containing the total values, so the bill + tip
+
 Test data: 125, 555 and 44
  */
+
+// Task 1: creating function that calculate the tip from a bill
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * (15 / 100) : bill * (20 / 100);
+};
+
+// Task 2: creating array that contains the bills
+const bills = [125, 555, 44];
+
+// Task 3: crating array called Tips that contain the tip value from the bills
+const tips = [calcTip(bills[0], calcTip(bills[1]), calcTip(bills[2]))];
+console.log(bills, tips);
+
+// Bonus Task 4: Creating array that contains the total amount of the bill plus the tip
+const total = [
+  bills[0] + calcTip(bills[0]),
+  bills[1] + calcTip(bills[1]),
+  bills[2] + calcTip(bills[2]),
+];
+
+console.log(total);

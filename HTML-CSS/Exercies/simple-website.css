@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ccc;
+}
+
+/* NAVIGATION BAR */
+nav {
+  background-color: #444;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+li {
+  display: inline-block;
+  padding: 30px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 40px;
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ARTICLE SECTION */
+section {
+  margin-left: 30px;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+p {
+  font-size: 30px;
+}
+
+p i {
+  font-size: 20px;
+}
+/* FOOTER SECTION */
+footer {
+  text-align: center;
+  background-color: #444;
+}
+
+footer p {
+  font-size: 25px;
+  color: #fff;
+}

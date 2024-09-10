@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #cccccc;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  background-color: #444;
+}
+
+li {
+  display: inline-block;
+  padding: 35px;
+  list-style-type: none;
+  font-size: 53px;
+  color: #e7f5fd;
+}
+
+li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #fff;
+}

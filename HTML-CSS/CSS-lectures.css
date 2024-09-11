@@ -995,4 +995,76 @@ Absolute positioning is often used when you need precise control over the placem
 
 /* 041 Pseudo-elements 
 --------------------------------
+Pseudo-elements are used to style specific parts of an element's content.
+For example, it can be used to:
+- Style the first letter, or line, of an element
+- Insert content before, or after, the content of an element.
+
+!!! Unlike normal elements, pseudo-elements don't exist in the HTML document tree. They are abstract and help target specific portions of an element, such as the first line or first letter or insert a content.
+
+Here are some commonly used pseudo-elements:
+
+1. 
+::before and ::after
+--------------------
+::before - Inserts content before the element's actual content.
+::after - Inserts content after the element's actual content.
+
+These pseudo-elements are often used for decorative purposes or adding additional content.
+Example:
+p::before {
+  content: "Note: ";
+  color: red;
+}
+
+p::after {
+  content: " [End of note]";
+  color: blue;
+}
+In this example, a note is added before and after a paragraph without modifying the HTML.
+
+2. 
+::first-letter
+--------------
+Styles the first letter of a block-level element, often used to create a drop cap effect.
+!!! Note: The ::first-letter pseudo-element can only be applied to block-level elements.
+Example:
+p::first-letter {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+3. 
+::first-line
+-------------
+Targets the first line of a block-level element.
+!!! Note: The ::first-line pseudo-element can only be applied to block-level elements.
+Example:
+p::first-line {
+  color: green;
+  font-style: italic;
+}
+
+4. 
+::selection
+-----------
+Styles the portion of an element that a user has highlighted or selected.
+Example:
+::selection {
+  background-color: yellow;
+  color: black;
+}
+
+Single vs. Double Colon (: vs. ::)
+
+Historically, pseudo-elements were written with a single colon (:before), but the CSS3 specification introduced the double colon (::) to differentiate them from pseudo-classes. For backward compatibility, you can still use the single colon in most cases (except for ::selection).
+
+Summary of Common Pseudo-Elements:
+
+::before: Insert content before an element's content.
+::after: Insert content after an element's content.
+::first-letter: Style the first letter of a block element.
+::first-line: Style the first line of a block element.
+::selection: Style selected text.
+These pseudo-elements give you powerful ways to manipulate and style content dynamically without modifying the HTML itself.
 */

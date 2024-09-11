@@ -1067,4 +1067,49 @@ Summary of Common Pseudo-Elements:
 ::first-line: Style the first line of a block element.
 ::selection: Style selected text.
 These pseudo-elements give you powerful ways to manipulate and style content dynamically without modifying the HTML itself.
+
+The adjacent sibling selector:
+
+Is used to select an element that is directly after another element and shares the same parent. It is denoted by the + symbol.
+Syntax:
+element1 + element2 {
+}
+- element1: The first element (the preceding sibling).
+- element2: The element immediately following element1 (the adjacent sibling).
+The rule will apply styles to element2 only if it immediately follows element1.
+Example where we are targeting the first <p>:
+HTML code:
+<h2>Heading</h2>
+<p>This paragraph will be styled because it is directly after the h2.</p>
+<p>This paragraph will not be styled.</p>
+CSS code:
+h2 + p {
+  color: blue;
+}
+In this example:
+- The adjacent sibling selector h2 + p selects the first <p> that comes immediately after an <h2> and changes its text color to blue.
+- The second <p> element is not selected because it does not immediately follow an <h2>.
+
+Key Points:
+- Immediate Sibling Only: The adjacent sibling selector only works when element2 immediately follows element1—there can be no other element in between (even if it's invisible like whitespace).
+
+- Same Parent Required: Both elements must be children of the same parent for this selector to work.
+
+Another Example:
+HTML code:
+<div>
+  <h3>Title</h3>
+  <p>This will be styled because it directly follows the h3.</p>
+  <span>Not selected.</span>
+  <p>This will not be styled because it's not directly after the h3.</p>
+</div>
+
+CSS code:
+h3 + p {
+  font-weight: bold;
+}
+Here, only the first <p> after the <h3> will have bold text.
+
+Conclusion:
+The adjacent sibling selector is useful for targeting elements in a specific position relative to others, particularly when you need to style elements only when they are immediately next to a certain type of element.
 */

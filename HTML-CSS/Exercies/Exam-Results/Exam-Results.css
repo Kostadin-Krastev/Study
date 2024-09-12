@@ -1,0 +1,17 @@
+table,
+th,
+td {
+  width: 800px;
+  height: 50px;
+  font-size: 30px;
+  border: 2px solid #000;
+}
+
+td {
+  text-align: center;
+}
+
+.average-score {
+  text-align: right;
+  padding-right: 8px;
+}

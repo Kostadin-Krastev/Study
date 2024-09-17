@@ -1720,7 +1720,7 @@ if x = 3.14, you can change the value of x, but you cannot change the value of 3
 Example:
 Value	    Type	        Comment
 ------------------------------------------------------
-"Hello"	    string	        "Hello" is always "Hello"
+"Hello"	  string	       "Hello" is always "Hello"
 3.14	    number	        3.14 is always 3.14
 true	    boolean	        true is always true
 false	    boolean	        false is always false

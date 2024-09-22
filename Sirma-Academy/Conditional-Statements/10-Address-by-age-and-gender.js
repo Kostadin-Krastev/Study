@@ -18,14 +18,18 @@ gender = "m";
 gender = "f";
 
 const addressByAgeAndGender = function (age, gender) {
-  if (age >= 16 && gender === "m") {
-    console.log("Mr.");
-  } else if (age < 16 && gender === "m") {
-    console.log("Master");
-  } else if (age >= 16 && gender === "f") {
-    console.log("Ms.");
-  } else if (age < 16 && gender === "f") {
-    console.log("Miss");
+  if (gender === "f") {
+    if (age <= 16) {
+      console.log("Miss");
+    } else {
+      console.log("Ms.");
+    }
+  } else if (gender === "m") {
+    if (age <= 16) {
+      console.log("Master");
+    } else {
+      console.log("Mr.");
+    }
   }
 };
 

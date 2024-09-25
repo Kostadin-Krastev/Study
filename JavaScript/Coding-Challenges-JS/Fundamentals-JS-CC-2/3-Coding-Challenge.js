@@ -11,7 +11,7 @@ height (Mark Miller and John Smith)
 method on both objects). Store the BMI value to a property, and also return it
 from the method
 3. Log to the console who has the higher BMI, together with the full name and the
-respective BMI. Example: "John's BMI (28.3) is higher than Mark's (23.9)!"
+respective BMI. Example: "John Smith's BMI (28.3) is higher than Mark Miller's (23.9)!"
 Test data: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m
 tall.
  */
@@ -23,12 +23,10 @@ const markInfo = {
   weightKg: 78,
   heightCm: 1.69,
   calcBMI: function () {
-    const calculateBmiMark = this.weightKg / this.heightCm ** 2;
-    return calculateBmiMark.toFixed(2);
+    this.calculateBmi = this.weightKg / this.heightCm ** 2;
+    return this.calculateBmi;
   },
 };
-
-const bmiMark = markInfo.calcBMI();
 
 const johnInfo = {
   firstName: "John",
@@ -36,17 +34,33 @@ const johnInfo = {
   weightKg: 92,
   heightCm: 1.95,
   calcBMI: function () {
-    const calculateBmiJohn = this.weightKg / this.heightCm ** 2;
-    return calculateBmiJohn.toFixed(2);
+    this.calculateBmi = this.weightKg / this.heightCm ** 2;
+    return this.calculateBmi;
   },
 };
 
-const bmiJohn = johnInfo.calcBMI();
+// Calling the functions that calculate the BMI
+markInfo.calcBMI();
+johnInfo.calcBMI();
+
 /*
-Log to the console who has the higher BMI, together with the full name and the
-respective BMI. 
-Example: "John's BMI (28.3) is higher than Mark's (23.9)!"
+Using if else statement to determent who have the higher BMI
+Example: "John Smith's BMI (28.3) is higher than Mark Miller's (23.9)!"
  */
-console.log(
-  `${johnInfo.firstName}'s BMI (${bmiMark}) is higher than ${markInfo.firstName}'s (${bmiJohn})!`
-);
+if (markInfo.calculateBmi > johnInfo.calculateBmi) {
+  console.log(
+    `${markInfo.firstName} ${
+      markInfo.lastName
+    }'s BMI (${markInfo.calculateBmi.toFixed(2)}) is higher than ${
+      johnInfo.firstName
+    } ${johnInfo.lastName}'s (${johnInfo.calculateBmi.toFixed(2)})`
+  );
+} else {
+  console.log(
+    `${johnInfo.firstName} ${
+      johnInfo.lastName
+    }'s BMI (${johnInfo.calculateBmi.toFixed(2)}) is higher than ${
+      markInfo.firstName
+    } ${markInfo.lastName}'s (${markInfo.calculateBmi.toFixed(2)})`
+  );
+}

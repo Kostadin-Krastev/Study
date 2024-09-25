@@ -23,7 +23,7 @@ console.log(
 // Task 2: Increase the country's population by two million using dot notation, and then decrease it by two million using brackets notation.
 
 // increasing population using dot notation
-myCountry.population = 7000000;
+myCountry.population += 2000000;
 
 // decreasing using bracket notation. When using bracket notation, property names should be in quotes ("population"), otherwise JavaScript will look for a variable named population, which doesn't exist.
 myCountry["population"] -= 2000000;

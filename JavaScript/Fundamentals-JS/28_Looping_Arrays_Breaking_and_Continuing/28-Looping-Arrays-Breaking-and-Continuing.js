@@ -96,3 +96,55 @@ Summary:
 
 These techniques give you flexibility in working with arrays depending on your needs.
  */
+
+const jonas = [
+  "Jonas",
+  "Smedman",
+  2037 - 1991,
+  "teacher",
+  ["Michal", "Peter", "Steven"],
+  true,
+];
+
+// creating an empty array that will be fill with information after the for loop past the jonas array
+const types = [];
+
+// Creating arrays using loop that contains the types of elements inside the jonas array
+for (i = 0; i < jonas.length; i++) {
+  // console.log(jonas[i]);
+
+  // // creating the new array Method 1
+  // types[i] = typeof jonas[i];
+
+  // creating new array Method 2: using .push
+  types.push = typeof jonas[i];
+}
+
+// Calling the new array
+// console.log(types);
+
+// New example calculating the age by dividing birth year from 2024
+const birthYears = [1991, 2007, 1969, 2020];
+
+// using loop inside of a function to go thru the array and calculate the age
+function calculateAge(birthYears) {
+  for (let i = 0; i < birthYears.length; i++) {
+    const age = 2024 - birthYears[i];
+    console.log(age);
+  }
+}
+
+calculateAge(birthYears);
+
+// Continue and Break examples
+console.log("--------------ONLY STRINGS-------------");
+for (i = 0; i < jonas.length; i++) {
+  if (typeof jonas[i] !== "string") continue;
+  console.log(jonas[i], typeof jonas[i]);
+}
+
+console.log("--------------BREAK WITH NUMBER-------------");
+for (let i = 0; i < jonas.length; i++) {
+  if (typeof jonas[i] === "number") break;
+  console.log(jonas[i], typeof jonas[i]);
+}

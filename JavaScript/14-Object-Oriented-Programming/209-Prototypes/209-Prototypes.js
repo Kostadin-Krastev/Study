@@ -135,7 +135,7 @@ Summary:
  */
 
 const Person = function (firstName, birthYear) {
-  // instance proparties of Perosn
+  // instance properties of Person
   this.firstName = firstName;
   this.birthYear = birthYear;
 };

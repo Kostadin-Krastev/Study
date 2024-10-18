@@ -14,6 +14,8 @@ method.
 
 // Test data 1
 let catsInfo = ['Mellon 2', 'Tom 3'];
+// Test data 2
+catsInfo = ['Branch 1', 'Poppy 3', 'Goldy 2'];
 
 // Creating class Cat
 class Cat {
@@ -32,16 +34,24 @@ class Cat {
 
 // Function that will take the array and parse the input data
 function cats(catsInfo) {
+  // empty array that will contain cats info
+  const cats = [];
+
   // for loop to accesses the array catsInfo
   for (const line of catsInfo) {
     // variable that splits the array words
     const [name, ageText] = line.split(' ');
+
     // variable that take the string number and covert it ti Number
     const age = Number(ageText);
-    // creating new cat
-    const cat = new Cat(name, age);
-    // calling the method with the created new cat
-    cat.meow();
+
+    // creating new cat into the empty array cat
+    cats.push(new Cat(name, age));
+
+    // for loop that go through array cats and calling the method meow
+    for (const cat of cats) {
+      cat.meow();
+    }
   }
 }
 

@@ -28,7 +28,8 @@ const printForecast = function (temperatures) {
 
   // looping thru the temperatures array and updating the empty string
   for (let i = 0; i < temperatures.length; i++) {
-    message = message + `${temperatures[i]}C in ${i + 1} days... `;
+    // message = message + `${temperatures[i]}C in ${i + 1} days... `;
+    message += `${temperatures[i]}C in ${i + 1} days... `;
   }
 
   console.log(`... ${message}`);

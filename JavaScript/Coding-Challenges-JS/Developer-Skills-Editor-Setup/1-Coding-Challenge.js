@@ -23,24 +23,15 @@ let temperatures = [17, 21, 23];
 temperatures = [12, 5, -5, 0, 4];
 
 const printForecast = function (temperatures) {
-  // Creating empty variables to store each day
-  let dayOne;
-  let dayTwo;
-  let dayThree;
+  // empty string that contains the message
+  let message = '';
 
-  //   Looping over the array temperatures to sign a number of a day in the empty variables
+  // looping thru the temperatures array and updating the empty string
   for (let i = 0; i < temperatures.length; i++) {
-    if (temperatures[i] === temperatures[0]) {
-      dayOne = '1 days';
-    } else if (temperatures[i] === temperatures[1]) {
-      dayTwo = '2 days';
-    } else {
-      dayThree = '3 days';
-    }
+    message = message + `${temperatures[i]}C in ${i + 1} days... `;
   }
-  //   Creating variable that contain the final message that we want to return
-  const message = `...${temperatures[0]}C in ${dayOne} ... ${temperatures[1]}C in ${dayTwo} ... ${temperatures[2]}C in ${dayThree} ...`;
-  console.log(message);
+
+  console.log(`... ${message}`);
 };
 
 printForecast(temperatures);

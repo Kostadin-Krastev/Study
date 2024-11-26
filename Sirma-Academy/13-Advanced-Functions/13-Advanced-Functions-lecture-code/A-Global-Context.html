@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Context</title>
+</head>
+
+<body>
+    <h1>Global Context</h1>
+
+    <script>
+        console.log('SUBJECT: Global Context');
+        // Global Context
+        console.log(this);
+
+        // ----------------------------------
+        console.log('SUBJECT: Global function invocation');
+        // Global function invocation
+        /*
+        When a regular (non-arrow) function is invoked directly without being bound to an object or called as a method of an object, its this context defaults to:
+        
+        - In non-strict mode: The global object (window in browsers, global in Node.js).
+        - In strict mode: undefined.
+        */
+        function globalFunction() {
+            console.log(this);
+        }
+        // --------------------------------------------
+        console.log('SUBJECT: Method invocation');
+        // Method invocation
+        const employee = {
+            name: 'Pesho',
+            work() {
+                console.log(`${employee.name} - work, work, work, work, work....`);
+                console.log(this);
+            }
+        }
+        /*
+      ВАЖНО!!!
+      Контекста на дадена функция зависи от начина, по който функцията бива извикана
+      */
+        employee.work() // in this case the function context is the object employee 
+
+        // But if we take the method work, and sore it in a variable, and the call the function using variable, then the function context become Global
+
+        // Execute function as a Global execution
+        const work = employee.work;
+        work() // the context is Global
+
+        // -----------------------------------
+
+        console.log('SUBJECT: Inner Method Context');
+        // Inner Method Context
+        const person = {
+            name: 'Marry',
+            outer() {
+                console.log(this);
+                function inner() {
+                    console.log(this);
+                }
+                inner()
+            }
+        }
+        person.outer()
+        /*
+        inner function is a regular function, not a method of person. When inner is called, it is invoked as a standalone function, not as a method of any object. 
+        In JavaScript, when a regular function is called without an explicit context, the value of this defaults to:
+        
+        - undefined in strict mode.
+        - The global object (window in browsers or global in Node.js) in non-strict mode.
+        
+        Since inner is called without a context, this in inner refers to window (or undefined if strict mode is enabled).
+        */
+        //    ---------------------------------
+        console.log('SUBJECT: Using arrow function as inner function');
+        // Using arrow function as inner function
+        const person2 = {
+            name: 'Marry',
+            outer() {
+                console.log(this);
+                const inner = () => console.log(this);
+                inner()
+            }
+        }
+        person2.outer()
+        /*
+        Arrow functions in JavaScript have a unique behavior: they do not have their own this context. Instead, they inherit this from their surrounding lexical scope.
+        For Arrow function applies the scope in which it is located
+        */
+    </script>
+</body>
+
+</html>

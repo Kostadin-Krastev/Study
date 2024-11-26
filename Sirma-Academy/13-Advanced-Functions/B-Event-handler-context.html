@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event handler context</title>
+</head>
+
+<body>
+    <h1>Event handler context</h1>
+
+    <button id="button">Click me!</button>
+    <button id="button-two">Click me 2</button>
+
+    <script>
+        console.log('SUBJECT: Event handler context');
+        // Event handler context
+        //The context of function firstHandler is Global, but the function is called in buttonElement.addEventListener('click', firstHandler), and because is called from a function addEventListener with context in buttonElement the result of the context of the function firstHandler will be not the Global scope, but her own scope  
+        function firstHandler(first, second) {
+            console.log(`${this.name} - First handler ${first} ${second}`);
+            console.log(this);
+        }
+
+        const eventHandlers = {
+            second() {
+                console.log('Second handler');
+                console.log(this);
+            }
+        }
+        const buttonElement = document.getElementById('button');
+        buttonElement.addEventListener('click', firstHandler);
+
+        const secondButtonElement = document.getElementById('button-two');
+        secondButtonElement.addEventListener('click', eventHandlers.second)
+    </script>
+</body>
+
+</html>

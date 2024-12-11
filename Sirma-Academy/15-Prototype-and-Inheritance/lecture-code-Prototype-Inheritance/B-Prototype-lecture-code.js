@@ -32,3 +32,15 @@ console.log('-----Assign Object from Prototype----------');
 let newObjAssign = Object.assign({}, baseObj); // copy properties from another object
 console.log(newObjAssign);
 console.log(newObjAssign.__proto__);
+
+// For in iterates not only own properties but prototype properties
+for (const prop in me) {
+  console.log(prop);
+}
+
+// Iterate only properties
+for (const prop in me) {
+  if (me.hasOwnProperty(prop)) {
+    console.log(prop);
+  }
+}

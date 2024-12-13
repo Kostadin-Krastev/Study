@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>JS DOM paragraph style</title>
+</head>
+
+<body>
+    <p id='text'>JavaScript Exercises</p>
+    <div>
+        <button onclick="restyle()">Style</button>
+    </div>
+</body>
+<script>
+    function restyle() {
+        const chngeStyleOnClick = document.querySelector('#text')
+
+        chngeStyleOnClick.style.fontFamily = 'Georgia, serif';
+        chngeStyleOnClick.style.fontSize = '20px';
+        chngeStyleOnClick.style.color = 'blue';
+    }
+</script>
+
+</html>

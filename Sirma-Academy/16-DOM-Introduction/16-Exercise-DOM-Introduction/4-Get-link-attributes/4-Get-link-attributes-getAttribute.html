@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+</head>
+
+<body>
+    <p>
+        <a id="someId" type="text/html" hreflang="bg-bg" rel="nofollow" target="_blank" href="#">resources</a>
+    </p>
+    <button onclick=getAttributes()>Click here to get attributes
+        value</button>
+</body>
+<!-- 4. Write a JavaScript function to get the value of the href, hreflang, rel,
+target, and type attributes of the specified link. -->
+<script>
+    function getAttributes() {
+        const getLinkAttributes = document.getElementById('someId');
+
+        console.log(getLinkAttributes.getAttribute('href'));
+        console.log(getLinkAttributes.getAttribute('hreflang'));
+        console.log(getLinkAttributes.getAttribute('rel'));
+        console.log(getLinkAttributes.getAttribute('target'));
+        console.log(getLinkAttributes.getAttribute('type'));
+    }
+</script>
+
+</html>

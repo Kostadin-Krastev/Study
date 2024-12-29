@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation</title>
+    <style>
+        .outer,
+        .middle,
+        .inner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .outer {
+            width: 400px;
+            height: 400px;
+            background-color: green;
+        }
+
+        .middle {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+
+        .inner {
+            width: 100px;
+            height: 100px;
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Event Propagation</h1>
+    <div class="outer">
+        <div class="middle">
+            <div class="inner">
+                <button class="inner-button">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document
+            .querySelector('.outer')
+            .addEventListener('click', (e) => {
+                // e.stopPropagation() // stops crawling (showing) other elements from DOM tree
+                console.log(e.currentTarget);
+                console.log(e.target);
+                console.log('Outer Clicked');
+            }, { capture: true });
+
+        document
+            .querySelector('.middle')
+            .addEventListener('click', (e) => {
+                console.log(e.currentTarget);
+                console.log(e.target);
+                console.log('Middle Clicked');
+            });
+
+        document
+            .querySelector('.inner')
+            .addEventListener('click', (e) => {
+                console.log(e.currentTarget);
+                console.log(e.target);
+                console.log('Inner Clicked');
+            });
+
+        document
+            .querySelector('.inner-button')
+            .addEventListener('click', (e) => {
+                console.log(e.currentTarget);
+                console.log(e.target);
+                console.log('Button Clicked');
+            })
+    </script>
+</body>
+
+</html>

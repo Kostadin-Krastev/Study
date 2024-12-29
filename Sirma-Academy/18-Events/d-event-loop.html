@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Loop</title>
+</head>
+
+<body>
+    <h1>Event Loop</h1>
+
+    <script>
+        console.log('First');
+        let intervalId = setInterval(() => {
+            console.log('Interval');
+        }, 1000)
+
+        // clearInterval(intervalId); // stopping interval repetition
+
+        setTimeout(() => {
+            console.log('Second');
+        }, 1000)
+
+        console.log('Third');
+    </script>
+</body>
+
+</html>

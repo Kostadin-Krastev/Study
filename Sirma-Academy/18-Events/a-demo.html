@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Events</title>
+</head>
+
+<body>
+    <h1>DOM Events</h1>
+    <!-- this button is executed with inline javascript -->
+    <button onclick="console.log('Clicked!'); let a = 123; console.log(a);">Click me</button>
+    <!-- below buttons are executed with internal javascript -->
+    <button onclick="console.log('Clicked!');">First</button>
+    <button onclick="onSecondClick()" (event)>Second</button>
+    <button id="third-button">Third</button>
+    <!-- The examples above are not used very often -->
+
+    <!-- This example is the preferred way -->
+    <button id="forth-button">Forth</button>
+
+    <!-- Example for removing event listener -->
+    <div id="lorem-text" style="background-color:aqua">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Reprehenderit ab ipsam
+        aut non blanditiis, odit magnam impedit nobis omnis cumque porro. Debitis ex explicabo molestiae similique amet
+        nulla et ratione.</div>
+
+    <script>
+        // Example with second button
+        function onSecondClick() {
+            console.log(event);
+            console.log('Second Clicked!');
+        }
+        // Example with third button
+        const thirdButton = document.getElementById('third-button');
+        thirdButton.onclick = function (event) {
+            console.log(event);
+            console.log('Third Clicked!');
+        }
+
+        // Add event listener - preferred way
+        const forthButton = document.getElementById('forth-button');
+        forthButton.addEventListener('click', (event) => {
+            console.log(event);
+            console.log('Forth Clicked!');
+        })
+
+        // Add event listener on hover
+        const loremElement = document.getElementById('lorem-text');
+        const loremTextMouseOverHandler = function (e) {
+            console.log(this);
+            console.log(e.target);
+            console.log(e.currentTarget);
+            console.log('mouse over');
+        }
+        loremElement.addEventListener('mouseover', loremTextMouseOverHandler)
+
+        // Removing event listener using timeout
+        setTimeout(
+            () => {
+                loremElement.removeEventListener('mouseover', loremTextMouseOverHandler)
+            }, 5000
+        )
+
+        // keyboard event
+        document.addEventListener('keypress', (e) => {
+            console.log(e.code);
+        })
+    </script>
+
+</body>
+
+</html>

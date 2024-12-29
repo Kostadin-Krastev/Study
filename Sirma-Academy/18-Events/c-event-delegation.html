@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+    <style>
+        .user-list {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Event Delegation</h1>
+    <ul class="user-list">
+        <li>Go6o</li>
+        <li>Pe6o</li>
+        <li>Stamat</li>
+        <li>Mariika</li>
+    </ul>
+
+    <script>
+        // This code will be more heavy on the performace point of view because we put event listener on every element
+        // document
+        //     .querySelectorAll('.user-list li')
+        //     .forEach(element => element.addEventListener('click', (e) => {
+        //         e.currentTarget.style.backgroundColor = 'green'
+        //     }))
+
+        // For performance optimization we put event listener only on ul element - this is Event delegation!!!
+        document
+            .querySelector('.user-list')
+            .addEventListener('click', (e) => {
+                if (e.target.tagName !== 'LI') {
+                    return;
+                }
+                e.target.style.backgroundColor = 'green';
+            })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+</head>
+
+<body>
+    <h1>Fetch</h1>
+
+    <div id="character-name"></div>
+    <button id="fetch-button">Fetch</button>
+    <label for="">Character Id</label>
+    <input type="number" name="character-id" id="character-id">
+    <script>
+        const url = 'https://swapi.py4e.com/api'
+        const fetchButton = document.getElementById('fetch-button');
+        const inputElement = document.getElementById('character-id')
+        function fetchCharacter() {
+            const characterId = inputElement.value;
+
+            fetch(`${url}/people/${characterId}`) // GET request by default
+                .then(response => response.json())
+                .then(jsonResult => {
+                    document.getElementById('character-name').textContent = jsonResult.name
+                })
+
+
+        }
+
+        fetchButton.addEventListener('click', fetchCharacter);
+    </script>
+</body>
+
+</html>

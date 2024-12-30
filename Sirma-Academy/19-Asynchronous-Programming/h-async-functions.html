@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async / Await</title>
+</head>
+
+<body>
+    <h1>Async / Await</h1>
+    <button id="fetch-button">Fetch Object</button>
+
+    <ul id="list-objects"></ul>
+
+    <form action="#" method="post" id="object-form">
+        <label for="object-name">Name</label>
+        <input type="text" name="name" id="object-name" />
+
+        <label for="object-year">Year</label>
+        <input type="text" name="year" id="object-year" />
+
+        <input type="submit">
+    </form>
+    <script>
+        const objectList = document.getElementById('list-objects')
+        const objectFormElement = document.getElementById('object-form')
+
+        async function fetchObject() {
+            const response = await fetch('https://api.restful-api.dev/objects');
+            const objects = await response.json();
+
+            for (const obj of objects) {
+                const liElement = document.createElement('li');
+                liElement.textContent = obj.name;
+
+                objectList.appendChild(liElement);
+            }
+
+            async function createObject(e) {
+                e.preventDefault();
+
+                const formData = new FormData(e.target)
+                const name = formData.get('name');
+                const year = formData.get('year');
+
+                const response = await fetch('https://api.restful-api.dev/objects', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name,
+                        data: { year }
+                    }),
+                });
+
+                const result = await response.json();
+                const liElement = document.createElement('li');
+                liElement.textContent = result.name;
+                objectList.appendChild(liElement);
+
+                document.getElementById('object-name').value = '';
+                document.GetElementById('object-year').value = '';
+            }
+        }
+
+        try {
+            document.getElementById('fetch-button').addEventListener('click', fetchObject)
+            document.getElementById('object-form').addEventListener('submit', createObject)
+
+        } catch (err) {
+            console.log(err.message);
+        }
+    </script>
+</body>
+
+</html>

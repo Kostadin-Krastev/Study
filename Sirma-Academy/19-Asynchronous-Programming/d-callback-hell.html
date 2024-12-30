@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Demo</title>
+</head>
+
+<body>
+    <h1>Callback Functions</h1>
+    <div id="text"></div>
+    <button id="button">Click</button>
+</body>
+<script>
+    const buttonElement = document.getElementById('button');
+
+    // Callback is normal JS function that is executed after async operation
+    // document.getElementById('text').textContent = 'Sync operation completed'
+    // console.log('Button is clicked');
+
+    setTimeout(function () {
+        console.log('Callback - 1');
+
+        setTimeout(function () {
+            console.log('Callback - 2');
+
+            setTimeout(function () {
+                console.log('Callback - 3');
+
+                setTimeout(function () {
+                    console.log('Callback - 4');
+                }, 1000)
+            }, 1000)
+        }, 1000)
+    }, 1000)
+
+</script>
+
+</html>

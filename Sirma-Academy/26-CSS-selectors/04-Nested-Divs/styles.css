@@ -1,0 +1,11 @@
+/* Create a parent div with 60% width and a child div with 50% width of its parent. Apply some colors to better see the difference. */
+
+.parent {
+  width: 60%;
+  background-color: bisque;
+}
+
+.child {
+  width: 50%;
+  background-color: aqua;
+}

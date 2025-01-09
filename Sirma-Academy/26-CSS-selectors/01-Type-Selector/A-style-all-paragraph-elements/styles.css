@@ -1,0 +1,5 @@
+/* Define a CSS rule to style all paragraph elements to have blue text and bold font weight. */
+p {
+  color: blue;
+  font-weight: bold;
+}

@@ -1,0 +1,6 @@
+/* Set the width of a div to 50% and observe how it changes with the browser window size. */
+
+.percentage-width {
+  width: 50%;
+  background-color: rgb(225, 220, 220);
+}

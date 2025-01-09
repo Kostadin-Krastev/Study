@@ -1,0 +1,5 @@
+/* Use a class selector to change the color of text inside elements with a specific class to red. */
+
+.highlight {
+  color: red;
+}

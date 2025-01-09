@@ -1,0 +1,6 @@
+/* Set the width of a div to 300px and observe its behavior when resizing the browser. */
+
+.fixed-width {
+  width: 300px;
+  background-color: aqua;
+}

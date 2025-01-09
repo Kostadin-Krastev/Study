@@ -1,0 +1,9 @@
+/* Apply both a class and an ID selector to the same element and see which style takes precedence. */
+
+.highlight {
+  background-color: cadetblue;
+}
+
+#unique {
+  background-color: bisque;
+}

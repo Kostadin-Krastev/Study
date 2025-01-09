@@ -1,0 +1,5 @@
+/* Write an example CSS rule using a class selector to change the background color of elements with a specific class. */
+
+.highlight {
+  background-color: rgb(158, 149, 164);
+}

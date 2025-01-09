@@ -1,0 +1,8 @@
+/* Change the background color of elements with a specific class. */
+div.highlight {
+  background-color: rgb(169, 123, 123);
+}
+
+p.highlight {
+  background-color: yellowgreen;
+}

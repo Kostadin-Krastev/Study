@@ -1,9 +1,0 @@
-/* Set the font-size of a parent div to 20px and a child div to 1.5em. */
-
-.parent {
-  font-size: 20px;
-}
-
-.child {
-  font-size: 1.5em;
-}

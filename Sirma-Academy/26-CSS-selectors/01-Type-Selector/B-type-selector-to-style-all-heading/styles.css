@@ -1,0 +1,6 @@
+/* Define a type selector to style all heading elements to have green text. */
+
+h1,
+h2 {
+  color: green;
+}

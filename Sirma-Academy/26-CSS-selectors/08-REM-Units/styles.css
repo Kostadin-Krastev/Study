@@ -1,0 +1,13 @@
+/* Task 1: Set the root element's font-size to 16px and a div element's font-size to 2rem. */
+
+html {
+  font-size: 16px;
+}
+
+/* Task 2: Change the root element's font-size to 20px and observe the change in the div element's font-size. */
+html {
+  font-size: 20px;
+}
+.rem-size {
+  font-size: 2rem;
+}

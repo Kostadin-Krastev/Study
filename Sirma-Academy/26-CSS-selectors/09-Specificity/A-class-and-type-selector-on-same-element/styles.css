@@ -1,0 +1,9 @@
+/* Use a class and a type selector on the same element and see which style is applied. */
+
+.highlight {
+  background-color: aquamarine;
+}
+
+p {
+  background-color: antiquewhite;
+}

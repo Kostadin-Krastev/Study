@@ -1,0 +1,11 @@
+/* Style both paragraph and heading elements using a selector list. */
+
+h1,
+p {
+  font-size: 2em;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  color: cadetblue;
+  font-weight: bold;
+  text-decoration: underline;
+}

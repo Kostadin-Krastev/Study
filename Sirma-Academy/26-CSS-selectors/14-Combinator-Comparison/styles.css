@@ -1,0 +1,11 @@
+/* Compare descendant combinator and child combinator. */
+
+div p {
+  font-size: 2rem;
+  color: chocolate;
+}
+
+div > p {
+  font-size: 1.5rem;
+  color: brown;
+}

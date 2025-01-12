@@ -1,0 +1,9 @@
+/* Style input elements based on their type attribute. */
+
+input[type='text'] {
+  background-color: yellow;
+}
+
+input[type='submit'] {
+  background-color: aquamarine;
+}

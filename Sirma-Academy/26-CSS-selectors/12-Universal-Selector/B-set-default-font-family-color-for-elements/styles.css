@@ -1,0 +1,7 @@
+/* Use the universal selector to set a default font-family and color for all elements. */
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+  color: aquamarine;
+}

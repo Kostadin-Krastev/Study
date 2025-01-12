@@ -1,0 +1,9 @@
+/* Use a selector list to apply the same style to multiple elements. */
+
+h1,
+p,
+div {
+  font-size: 2rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: coral;
+}

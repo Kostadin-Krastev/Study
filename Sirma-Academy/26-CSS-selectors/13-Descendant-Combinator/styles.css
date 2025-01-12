@@ -1,0 +1,6 @@
+/* Style nested elements using a descendant combinator*/
+
+div p {
+  font-size: 1.5rem;
+  color: blueviolet;
+}

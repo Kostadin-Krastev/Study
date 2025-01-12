@@ -1,0 +1,5 @@
+/* Use the universal selector to set a default margin and padding for all elements. */
+* {
+  margin: 50px;
+  padding: 50px;
+}

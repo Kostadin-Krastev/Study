@@ -1,0 +1,6 @@
+/* Use a child combinator to style direct children of a specific class. */
+.parent > p {
+  background-color: black;
+  color: wheat;
+  font-size: 2rem;
+}

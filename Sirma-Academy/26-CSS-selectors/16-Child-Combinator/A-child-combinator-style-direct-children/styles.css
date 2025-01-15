@@ -1,0 +1,5 @@
+/* Use a child combinator to style direct children of a div element. */
+div > p {
+  background-color: black;
+  color: white;
+}

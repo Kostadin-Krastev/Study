@@ -1,0 +1,8 @@
+/* Use CSS to demonstrate the box model by setting margin, border, padding, and content area values. */
+.box {
+  margin: 20px;
+  border: 2px solid black;
+  padding: 10px;
+  font-size: 1.5rem;
+  width: 10vw;
+}

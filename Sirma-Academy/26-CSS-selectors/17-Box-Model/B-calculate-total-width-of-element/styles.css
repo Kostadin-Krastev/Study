@@ -1,0 +1,8 @@
+/* Calculate the total width of an element with specific width, padding, border, and margin values. */
+.box {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+  margin: 10px;
+}
+/* Total width of the element .box is 225px */

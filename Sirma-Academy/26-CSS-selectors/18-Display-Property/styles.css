@@ -1,0 +1,12 @@
+/* Set different display properties (block, inline, inline-block) for elements. */
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
+.inline-block {
+  display: inline-block;
+}

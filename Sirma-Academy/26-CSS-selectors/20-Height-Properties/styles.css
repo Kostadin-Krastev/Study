@@ -1,0 +1,8 @@
+/* Set the height, min-height, and max-height of a div element. */
+
+.height-example {
+  height: 50vh;
+  min-height: 20vh;
+  max-height: 60vh;
+  border: 3px solid black;
+}

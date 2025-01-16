@@ -1,0 +1,8 @@
+/* Set the width, min-width, and max-width of a div element. */
+
+.width-example {
+  width: 20vw;
+  max-width: 90vw;
+  min-width: 50vw;
+  border: 3px solid black;
+}

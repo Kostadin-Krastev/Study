@@ -1,0 +1,6 @@
+/* Set different margin, border, and padding values for a div element. */
+.box-model {
+  margin: 40px;
+  padding: 10px;
+  border: 5px solid black;
+}

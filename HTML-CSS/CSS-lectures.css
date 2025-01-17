@@ -1147,3 +1147,65 @@ Resets the float property to its default value, which is none.
 8. unset:
 Removes the float property, treating it as inherit if inherited or none if not.
  */
+
+/* 
+ -------------------------------------------
+050. box-sizing: border-box
+The box-sizing property in CSS is used to determine how the total width and height of an element are calculated, including the element's content, padding, and border.
+
+The box-sizing: border-box; value is a popular choice because it makes layout calculations more intuitive by including the padding and border within the element's specified width and height.
+
+Syntax:
+box-sizing: content-box | border-box | inherit | initial | unset;
+
+Values
+1. content-box (default):
+
+The width and height apply only to the content of the element.
+Padding and border are not included in the width and height; they are added outside the content dimensions.
+Example:
+div {
+  width: 200px; Content width is 200px
+  padding: 20px; Total width becomes 240px
+  border: 10px solid black; Total width becomes 260px
+}
+
+2. border-box:
+
+The width and height include the content, padding, and border.
+This makes it easier to size elements, as the total width and height remain fixed regardless of padding or border sizes.
+
+Example:
+div {
+  width: 200px; Total width stays 200px
+  padding: 20px; Content shrinks to 160px
+  border: 10px solid black; Content shrinks to 140px
+}
+
+3. inherit:
+The element inherits the box-sizing value from its parent.
+
+4. initial:
+Sets the property to its default value (content-box).
+
+5. unset:
+Resets the property to either inherit (if inherited) or initial (if not inherited).
+
+Why Use border-box?
+
+1. Simpler Layouts:
+When box-sizing: border-box; is applied, the specified width and height include padding and borders, so you don’t need to calculate them separately.
+
+2. Consistency Across Elements:
+Using border-box ensures that the total dimensions of elements remain predictable and consistent.
+
+3. Common in Frameworks:
+Modern frameworks and resets like Bootstrap or Normalize.css apply border-box universally for easier layout management.
+
+Best Practices
+1. Use box-sizing: border-box; in most projects for easier layout calculations.
+
+2. Apply it globally with the universal selector to standardize box-sizing behavior across elements.
+
+3. Be cautious when mixing content-box and border-box, as it can lead to inconsistent layouts.
+ */

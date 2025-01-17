@@ -1209,3 +1209,39 @@ Best Practices
 
 3. Be cautious when mixing content-box and border-box, as it can lead to inconsistent layouts.
  */
+
+/* 
+  -------------------------------------------
+053. Flexbox
+Flexbox (Flexible Box Layout) in CSS is a layout model designed to arrange elements efficiently and responsively, even when their sizes are dynamic or unknown. It simplifies the alignment, spacing, and distribution of elements within a container, making it especially useful for creating modern web designs.
+
+Key Concepts
+1. Flex Container:
+The parent element with display: flex or display: inline-flex.
+
+Basic Syntax
+.container {
+  display: flex;
+}
+
+2. Flex Items:
+The direct children of the flex container. These items are automatically laid out using the Flexbox model.
+
+Basic Syntax
+.container {
+  display: flex;   -Turns the container into a flex container
+  flex-direction: row;  -Main axis direction 
+  justify-content: flex-start;   -Alignment along the main axis 
+  align-items: stretch;   -Alignment along the cross axis
+}
+
+Best Use Cases for flexbox
+- Navigation bars.
+- Centering elements.
+- Equal-height columns.
+- Responsive grids (though CSS Grid is better for 2D layouts).
+
+When Not to Use Flexbox
+- For complex 2D layouts (use CSS Grid instead).
+- When precise control over row and column alignment is required.
+ */

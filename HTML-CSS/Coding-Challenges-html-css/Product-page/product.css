@@ -4,6 +4,7 @@ body {
   line-height: 1.4;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .product-page {
@@ -15,6 +16,14 @@ body {
   margin-right: auto;
   position: relative;
 }
+
+/* ADD FLOAT to the PRODUCT IMAGE, PRICE-PRODUCT-INFO-BOX and PRODUCT- DETAILS-BOX */
+.product-image,
+.price-product-info-box,
+.product-details-box {
+  float: left;
+}
+
 /* PRODUCT TITLE */
 .product-title {
   padding: 15px;
@@ -47,7 +56,19 @@ body {
 }
 
 /* PRODUCT INFORMATION */
+.price-product-info-box,
+.product-details-box {
+  width: 243px;
+  margin-left: 40px;
+}
+
+.price-product-info-box {
+  margin-top: 20px;
+}
+
 .price {
+  float: left;
+  margin-bottom: 5px;
   font-size: 24px;
 }
 
@@ -65,13 +86,15 @@ body {
 }
 
 .shipping {
+  float: right;
   font-size: 12px;
   font-weight: bold;
   color: #777;
-  margin-bottom: 20px;
+  margin-top: 8px;
 }
 
 .product-info {
+  clear: both;
   margin-bottom: 15px;
 }
 
@@ -125,7 +148,8 @@ body {
 }
 
 .product-details {
-  margin-top: 30px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   font-size: 16px;
 }
 

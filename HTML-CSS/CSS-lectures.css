@@ -1245,3 +1245,75 @@ When Not to Use Flexbox
 - For complex 2D layouts (use CSS Grid instead).
 - When precise control over row and column alignment is required.
  */
+
+/* 
+   -------------------------------------------
+055 The flex Property
+
+The CSS flex property is a shorthand property for setting how a flex item grows, shrinks, and defines its initial size in a flex container. It simplifies the application of the flex-grow, flex-shrink, and flex-basis properties into a single declaration.
+
+Syntax
+flex: [flex-grow] [flex-shrink] [flex-basis];
+
+Default Values
+flex: 0 1 auto;
+
+This means:
+
+- flex-grow: 0 (The item will not grow to fill available space).
+- flex-shrink: 1 (The item will shrink if necessary).
+- flex-basis: auto (The item's size is determined by its content or width/height).
+
+
+Components of the flex Property
+1. flex-grow (Optional)
+Defines how much the flex item will grow relative to the others.
+
+- A positive number indicates the item can grow to fill available space.
+- 0 means the item won't grow.
+Example
+flex: 1 0 auto; The item grows to fill any available space
+
+2. flex-shrink (Optional)
+Defines how much the flex item will shrink relative to others when space is limited.
+
+- 1 means the item can shrink if necessary.
+- 0 means the item will not shrink.
+Example
+flex: 0 1 auto; The item shrinks but does not grow 
+
+3. flex-basis (Optional)
+Defines the initial size of the flex item before space distribution.
+
+Can be a length (e.g., px, em, %) or the keyword auto (default).
+Example
+flex: 1 1 100px; Item starts at 100px, grows, and shrinks
+
+Shorthand Rules--------------
+1. If one value is provided:
+- It’s treated as flex-grow.
+Example
+flex: 1; Equivalent to flex: 1 1 0%
+
+2. If two values are provided:
+- The first is flex-grow, and the second is flex-shrink.
+Example
+flex: 1 0; Equivalent to flex: 1 0 0% 
+
+3. If three values are provided:
+They are interpreted as flex-grow, flex-shrink, and flex-basis.
+
+Common Use Cases--------
+1. Creating flexible layouts:
+Adjust items to take up available space proportionally.
+
+2. Responsive design:
+Combine flex with media queries for dynamic behavior across screen sizes.
+
+3. Mixed fixed and fluid widths:
+Use flex-basis for fixed sizes and flex-grow for fluidity.
+
+Tips
+- When using flex-basis and percentages, ensure the parent container has a defined width for proper calculation.
+- Avoid setting flex-grow to a very large value unless you want a significant size difference between items.
+ */

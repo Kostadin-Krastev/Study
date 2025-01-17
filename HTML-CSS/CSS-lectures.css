@@ -1113,3 +1113,37 @@ Here, only the first <p> after the <h3> will have bold text.
 Conclusion:
 The adjacent sibling selector is useful for targeting elements in a specific position relative to others, particularly when you need to style elements only when they are immediately next to a certain type of element.
 */
+
+/* 
+-------------------------------------------
+047. Float
+In CSS, the float property is used to position an element to the left or right within its containing element, allowing text or other inline elements to wrap around it. While it was originally designed for tasks like wrapping text around images, it has historically been used for layout purposes, though modern techniques like Flexbox and Grid have largely replaced it for layout tasks.
+
+Syntax
+float: none | left | right | inline-start | inline-end | inherit | initial | unset;
+
+Property Values
+1. none (default):
+The element does not float. It behaves as a normal block-level element.
+
+2. left:
+The element floats to the left side of its container, and content flows around it on the right.
+
+3. right:
+The element floats to the right side of its container, and content flows around it on the left.
+
+4. inline-start (logical property):
+The element floats to the start of the inline direction (e.g., left in LTR languages).
+
+5. inline-end (logical property):
+The element floats to the end of the inline direction (e.g., right in LTR languages).
+
+6. inherit:
+The element inherits the float value from its parent.
+
+7. initial:
+Resets the float property to its default value, which is none.
+
+8. unset:
+Removes the float property, treating it as inherit if inherited or none if not.
+ */

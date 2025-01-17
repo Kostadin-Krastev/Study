@@ -1,11 +1,13 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: sans-serif;
   color: #444;
+  position: relative;
 }
 
 .container {
@@ -26,7 +28,6 @@ nav {
 }
 
 article {
-  position: relative;
   margin-bottom: 60px;
 }
 
@@ -95,6 +96,7 @@ h3 {
 }
 
 h4 {
+  margin-bottom: 30px;
   font-size: 20px;
   text-transform: uppercase;
   text-align: center;
@@ -125,12 +127,12 @@ aside {
   background-color: #f7f7f7;
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
-  padding: 50px 0;
-  width: 500px;
+  padding: 50px 40px;
 }
 
 .related-posts {
   list-style: none;
+  margin-left: 0;
 }
 
 .related-author {
@@ -178,7 +180,7 @@ button {
   cursor: pointer;
 
   position: absolute;
-  bottom: 1;
+  bottom: 0;
   right: 0;
 }
 

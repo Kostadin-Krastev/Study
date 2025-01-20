@@ -23,9 +23,11 @@
       <header class="post-header">
         <h2>The Basic Language of the Web: HTML</h2>
 
-        <img src="./images/laura-jones.jpg" alt="a girl with a hat" width="50" height="50" class="author-img" />
+        <div class="author-img-name">
+          <img src="./images/laura-jones.jpg" alt="a girl with a hat" width="50" height="50" class="author-img" />
 
-        <p id="author" class="author">Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027</p>
+          <p id="author" class="author">Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027</p>
+        </div>
 
         <img src="./images/post-img.jpg" alt="HTML code on a computer screen" width="500" height="200"
           class="post-img" />
@@ -95,20 +97,27 @@
     <aside>
       <h4>Related posts</h4>
       <ul class="related-posts">
-        <li>
-          <img src="./images/related-1.jpg" alt="a person writing in a computer" width="75" height="75" />
-          <a href="#">How to learn Web development</a>
-          <p class="related-author"><strong>Johnas Shmedman</strong></p>
+        <li class="related-post person-writing-computer-post">
+          <img src="./images/related-1.jpg" alt="a person writing in a computer" width="75" height="75"
+            class="test-img-flex" />
+          <div class="related-info">
+            <a href="#" class="related-link">How to learn Web development</a>
+            <p class="related-author"><strong>Johnas Shmedman</strong></p>
+          </div>
         </li>
-        <li>
+        <li class="related-post thunderstorm-post">
           <img src="./images/related-2.jpg" alt="thunderstorm" width="75" height="75" />
-          <a href="#">The unknown power of CSS</a>
-          <p class="related-author"><strong>by Jimm Dilon</strong></p>
+          <div class="related-info">
+            <a href="#" class="related-link">The unknown power of CSS</a>
+            <p class="related-author"><strong>by Jimm Dilon</strong></p>
+          </div>
         </li>
-        <li>
-          <img src="./images/related-3.jpg" alt="code on a computer screen" width="75" height="75" />
-          <a href="#">Why JavaScript is Awesome</a>
-          <p class="related-author"><strong>by Matilda</strong></p>
+        <li class="related-post source-code-post">
+          <img src="./images/related-3.jpg" alt="source code" width="75" height="75" />
+          <div class="related-info">
+            <a href="#" class="related-link">Why JavaScript is Awesome</a>
+            <p class="related-author"><strong>by Matilda</strong></p>
+          </div>
         </li>
       </ul>
     </aside>

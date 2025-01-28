@@ -1317,3 +1317,115 @@ Tips
 - When using flex-basis and percentages, ensure the parent container has a defined width for proper calculation.
 - Avoid setting flex-grow to a very large value unless you want a significant size difference between items.
  */
+
+/* 
+ -----------------------------------------------
+ 059 Introduction to CSS Grid
+ 
+ CSS Grid is a powerful layout system designed to create complex, responsive, and flexible layouts on the web. It works by dividing a container into rows and columns, allowing precise placement of child elements (grid items).
+
+1. Basic Terminology
+- Grid Container: The parent element that uses display: grid.
+- Grid Items: The direct child elements of the grid container.
+- Grid Lines: The dividing lines between rows and columns.
+- Grid Tracks: The space between two adjacent grid lines (e.g., a row or column).
+- Grid Cell: The space between one row line and one column line.
+- Grid Area: A rectangular area defined by multiple cells.
+
+2. Setting Up a Grid
+To create a grid, apply display: grid to a container:
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); - 3 equal columns
+  grid-template-rows: auto; - Rows adjust based on content
+  gap: 10px; - Space between rows and columns
+}
+
+3. Defining Columns and Rows
+You can specify grid dimensions with grid-template-columns and grid-template-rows:
+
+Example:
+
+.container {
+  display: grid;
+  grid-template-columns: 100px 200px 1fr; - Fixed, flexible, and fractional units
+  grid-template-rows: 50px auto 100px;
+}
+
+Units:
+- px: Fixed size.
+- %: Percentage of the container size.
+- fr: Fractional unit, dividing available space.
+- auto: Adjusts based on content.
+
+4. Placing Grid Items
+Use properties like grid-column and grid-row to control where items appear:
+
+Example:
+.item1 {
+  grid-column: 1 / 3; - Spans from column 1 to column 3
+  grid-row: 1 / 2; - Spans row 1
+}
+
+5. Shorthand Properties
+- grid-area: Combines grid-row and grid-column into one property.
+- grid-template: Combines rows and columns into a single declaration.
+
+6. Implicit and Explicit Grids
+- Explicit Grid: You define the rows and columns explicitly with grid-template-columns and grid-template-rows.
+
+- Implicit Grid: Extra items not defined in the grid will create additional rows or columns automatically.
+Example:
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+If there are more items than space, additional rows are created automatically.
+
+7. Responsive Grid
+You can create responsive grids using media queries or the minmax() function.
+
+Example:
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+- auto-fit: Automatically fits as many columns as possible.
+- minmax(200px, 1fr): Ensures columns are at least 200px but stretch to fill available space.
+
+8. Grid Template Areas
+You can define named grid areas for a layout.
+
+Example:
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+.header {
+  grid-area: header;
+}
+.sidebar {
+  grid-area: sidebar;
+}
+.content {
+  grid-area: content;
+}
+.footer {
+  grid-area: footer;
+}
+
+Why Use CSS Grid?
+- Best for Layouts: Great for 2D layouts (rows and columns).
+- Flexible: Easily adapts to different screen sizes.
+- Precise Control: Allows fine-tuned control of element placement.
+
+ */

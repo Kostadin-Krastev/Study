@@ -1,0 +1,52 @@
+* {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header,
+footer {
+  grid-column: 1 / -1;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0;
+  padding-right: 0;
+  color: #fff;
+  background-color: #333;
+}
+
+header,
+footer,
+article {
+  text-align: center;
+}
+
+main {
+  display: grid;
+  background-color: #f4f4f4;
+  padding: 10px;
+}
+
+.box {
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  background-color: #ddd;
+}
+
+/* 
+For screens wider than 1200px, apply a three-column grid layout.
+For screens between 600px and 1200px, apply a two-column grid layout.
+For screens narrower than 600px, switch to a single-column flexbox layout.
+*/
+@media (min-width: 600px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

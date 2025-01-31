@@ -1,0 +1,66 @@
+h1 {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 125px 200px 125px;
+  grid-template-rows: 250px 100px;
+
+  /* aligning Grid container inside of the section: properties (justify-content and align-content) */
+  justify-content: center;
+  align-content: center;
+
+  /* aligning items INSIDE the cells: moving items around the cells: properties (justify-items and align-items) */
+  justify-items: center;
+  align-items: center;
+
+  height: 600px;
+  width: 700px;
+  margin: 40px;
+  background-color: aqua;
+}
+
+/* individual aligning a element inside the Grid */
+.green {
+  justify-self: end;
+  align-self: end;
+  height: 150px;
+  background-color: green;
+}
+
+.black {
+  background-color: black;
+}
+
+.yellow {
+  /* grid-column: 1/3; */
+  background-color: yellow;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.purple {
+  background-color: purple;
+}
+
+.brown {
+  background-color: brown;
+}
+
+.gray {
+  background-color: gray;
+}
+
+.black,
+.yellow,
+.green,
+.blue,
+.purple,
+.brown,
+.gray {
+  /* height: 30vh; */
+}

@@ -41,6 +41,28 @@ a {
   color: #fff;
 }
 
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+
+div {
+  background-color: #f3f3f3;
+  border: solid 1px #d7d7d7;
+  width: 450px;
+}
+
+div p {
+  text-align: center;
+}
+
+footer p {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 /* 
 For screens wider than 1400px, ensure the navigation bar is horizontal, and
 the main content uses a four-column grid layout.

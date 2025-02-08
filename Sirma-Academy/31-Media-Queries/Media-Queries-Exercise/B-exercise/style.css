@@ -1,0 +1,58 @@
+html,
+body {
+  font-size: 16px;
+  margin: 0;
+}
+
+header,
+footer {
+  color: #fff;
+  background-color: #323232;
+}
+
+h1 {
+  margin: 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #434343;
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  width: 320px;
+  margin: 0;
+  padding: 10px 0px 10px 0px;
+  /* width: 150px; */
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* 
+For screens wider than 1400px, ensure the navigation bar is horizontal, and
+the main content uses a four-column grid layout.
+
+o For screens between 900px and 1400px, the navigation bar should be
+vertical and fixed on the left, and the main content should use a two-column
+grid layout.
+
+o For screens between 600px and 900px, hide the navigation bar and switch to
+a single-column flexbox layout for the main content.
+
+o For screens narrower than 600px, ensure the navigation bar remains hidden
+and the main content uses a single-column flexbox layout with adjusted
+padding.
+*/

@@ -6,9 +6,8 @@ function sumArr(input) {
       let arrValue = input[i] + input[i + 1];
 
       condenceArr.push(arrValue);
-
-      input = condenceArr;
     }
+    input = condenceArr;
   }
 
   console.log(input);

@@ -11,3 +11,20 @@ lengths of its sides.
 length of its side and the length of the height to it.
 Round the result to 2 decimal places.
  */
+function calculate(type, dimA, dimB) {
+  let area;
+
+  if (type === 'square') {
+    area = dimA * dimA;
+  } else if (type === 'rectangle') {
+    area = dimA * dimB;
+  } else if (type === 'circle') {
+    area = Math.PI * dimA ** 2;
+  } else if (type === 'triangle') {
+    area = 0.5 * dimA * dimB;
+  }
+
+  console.log(area.toFixed(2));
+}
+
+calculate('triangle', 4.5, 20);

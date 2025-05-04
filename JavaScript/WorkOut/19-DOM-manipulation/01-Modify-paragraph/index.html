@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>JS DOM paragraph style</title>
+</head>
+
+<body>
+    <p id='text'>JavaScript Exercises</p>
+    <div>
+        <button onclick="restyle()">Style</button>
+    </div>
+</body>
+<script>
+    function restyle() {
+        // changing font, font size and color
+        const styleText = document.getElementById('text');
+        styleText.style.cssText = 'font-family: Arial; font-size: 24px; color: red';
+        // HINT: cssText property apply multiple styles in one operation rather than setting each style property individually
+    }
+</script>
+
+</html>

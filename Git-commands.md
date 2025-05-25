@@ -59,7 +59,7 @@ For example:
 
 ---
 
-#Check the directory contents:
+## Check the directory contents:
 
 - **ls** (Unix/Linux/macOS)
 - **dir** (Windows)
@@ -68,12 +68,14 @@ If using PowerShell or Windows Subsystem for Linux (WSL), both dir and ls are wo
 
 ---
 
-#Check Your Current Directory:
+## Check Your Current Directory:
+
 **pwd**
 
 ---
 
-#Navigate Back in Folders:
+## Navigate Back in Folders:
+
 **cd ..**
 
 ---

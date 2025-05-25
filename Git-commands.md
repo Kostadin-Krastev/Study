@@ -1,13 +1,14 @@
-#Create a new Git repository:
-git init
+## Create a new Git repository:
+
+**git init**
 
 ---
 
-##To commit, stage, and push changes to a Git repository using the terminal, follow these steps:
+### To commit, stage, and push changes to a Git repository using the terminal, follow these steps:
 
-1. Check the Current Status
-   Run the following command to see which files have been modified, added, or deleted:
-   git status
+- Check the Current Status
+  Run the following command to see which files have been modified, added, or deleted:
+  **git status**
 
 This command shows:
 
@@ -17,108 +18,126 @@ Changes staged for commit: Files ready to be committed.
 
 ---
 
-#Stage Files
-Use the git add command to stage files for the commit:
+### Stage Files
+
+Use the **git add** command to stage files for the commit:
 
 - Stage a specific file:
-  git add file_name
+  **git add** <file_name>
 
-(If a file name contains spaces, you should enclose the file name in quotes when using it in Git commands.)
+(**If a file name contains spaces**, you should enclose the file name in quotes when using it in Git commands.)
 Example
 If your file name is: my file.txt:
 Correct Command:
-git add "my file.txt"
+**git add** "my file.txt"
 
 - Stage multiple files:
-  git add file1 file2
+  **git add** file1 file2
 
 - Stage all changes:
-  git add .
+  **git add .**
 
 ---
 
-#Commit the Changes
+### Commit the Changes
+
 After staging, create a commit with a descriptive message:
-git commit -m "Your commit message"
+**git commit -m** 'Your commit message'
 
 ---
 
-Push Changes to Remote Repository
-git push origin <branch_name>
+### Push Changes to Remote Repository
+
+**git push origin** <branch_name>
 
 Replace <branch_name> with the name of your branch, such as main or dev.
 For example:
-git push origin main
+**git push origin** main
+
+- If you are in the branch that you want to push the changes only type:
+  **git push**
 
 ---
 
 #Check the directory contents:
-ls (Unix/Linux/macOS)
-dir (Windows)
+
+- **ls** (Unix/Linux/macOS)
+- **dir** (Windows)
 
 If using PowerShell or Windows Subsystem for Linux (WSL), both dir and ls are working
 
 ---
 
 #Check Your Current Directory:
-pwd
+**pwd**
 
 ---
 
 #Navigate Back in Folders:
-cd ..
+**cd ..**
 
 ---
 
-#Entering a Folder:
-cd <folder-name>
+## Entering a Folder:
+
+**cd** <folder_name>
 
 ---
 
-#Clear the terminal screen:
-cls
+## Clear the terminal screen:
+
+**cls**
 
 ---
 
-#View the list of commit history of a Git repository
-git log
+## View the list of commit history of a Git repository
 
-To exit the list
-q
+**git log**
+
+- To exit the list:
+  **q**
+
+---
+
+## Returning to old commit
+
+**git checkout** id of the commit
+
+- How is done:
+
+1. **git log** - to see commits and their ID's
+2. **git checkout** and writing the commit ID
+
+---
 
 ## ----------------------BRANCHES--------------------------
 
-#Create new branch
-git branch <new-branch-name>
+## Create new branch
 
-#Create and switch to a new branch
-git switch -c <new-branch-name>
+**git branch** <new_branch_name>
 
----
+## Create and switch to a new branch
 
-#Switching branches
-git switch <the-branch-name>
+**git switch -c** <new_branch_name>
 
 ---
 
-#Returning to old commit
-git checkout id of the commit
-How is done:
-1st - git log - to see commits and their ID's
-2nd- git checkout and writing the commit ID
+## Switching branches
 
-If I want to return back to main (last made commit)
-git switch main # switch to existing branch
+**git switch** <the_branch_name>
 
 ---
 
-#View list of all local branches.
+## View list of all local branches.
+
+**git branch**
 The currently active branch is marked with an asterisk \*.
-git branch
 
 ---
 
-#Merge branches
+## Merge branches
 
 - Switch to the branch you want to merge into (usually main or master)
+  **git switch** <main_branch_name>
 - Merge the other branch into the current branch:
+  **git merge** <other_branch_name>

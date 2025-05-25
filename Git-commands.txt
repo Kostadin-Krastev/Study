@@ -1,8 +1,5 @@
 create a new Git repository:
 git init
---------------------------------------------------
-create a new branch and switch to it simultaneously:
-git checkout -b <branch_name>
 -----------------------------------------------------
 ##To commit, stage, and push changes to a Git repository using the terminal, follow these steps:
 1. Check the Current Status
@@ -64,7 +61,7 @@ cd ..
 
 ---------------------------------------------------------
 Entering a Folder:
-cd nameOfFolder
+cd <folder-name>
 
 --------------------------------------------------------
 Clear the terminal screen:

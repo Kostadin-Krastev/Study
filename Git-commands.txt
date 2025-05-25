@@ -49,7 +49,10 @@ git push origin main
 
 -----------------------------------------------------------
 Check the directory contents:
-ls
+ls (Unix/Linux/macOS)
+dir (Windows)
+
+If using PowerShell or Windows Subsystem for Linux (WSL), both dir and ls are working
 
 ----------------------------------------------------------
 Check Your Current Directory:
@@ -66,3 +69,38 @@ cd nameOfFolder
 --------------------------------------------------------
 Clear the terminal screen:
 cls
+
+--------------------------------------------------------
+View the list of commit history of a Git repository
+git log
+
+To exit the list
+q
+
+----------------------BRANCHES--------------------------
+--------------------------------------------------------
+Create new branch
+git branch <new-branch-name>
+
+Create and switch to a new branch
+git switch -c <new-branch-name>
+
+--------------------------------------------------------
+Switching branches
+git switch <the-branch-name>
+
+--------------------------------------------------------
+Returning to old commit
+git checkout id of the commit
+How is done:
+1st - git log - to see commits and their ID's
+2nd- git checkout and writing the commit ID
+
+If I want to return back to main (last made commit)
+git switch main                # switch to existing branch
+
+--------------------------------------------------------
+View list of all local branches. The currently active branch is marked with an asterisk *.
+git branch
+
+--------------------------------------------------------

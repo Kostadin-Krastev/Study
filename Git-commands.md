@@ -74,6 +74,31 @@ If using PowerShell or Windows Subsystem for Linux (WSL), both dir and ls are wo
 
 ---
 
+## Lists all tracked files in the current repository:
+
+**git ls-files**
+
+### It shows tracked files—those that are:
+
+- Already added with git add;
+- Or committed (in the index).
+
+### It does not show
+
+- Untracked or ignored files.
+
+---
+
+## Deleting files
+
+**git rm <file_name>**
+
+- Deletes files from disk (by default)
+- Unstage the files (removes them from the Git index)
+- Prepares the removal to be committed
+
+---
+
 ## Navigate Back in Folders:
 
 **cd ..**
@@ -148,8 +173,8 @@ The currently active branch is marked with an asterisk \*.
 
 ## Enter Detached HEAD mode:
 
-- git checkout <commit_ID> or git switch --detach <commit_ID>
+- **git checkout** <commit_ID> or **git switch --detach** <commit_ID>
 
 ## Get out of Detached HEAD
 
-- git switch <branch_name>
+- **git switch** <branch_name>

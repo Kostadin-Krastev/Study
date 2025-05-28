@@ -143,3 +143,13 @@ The currently active branch is marked with an asterisk \*.
   **git switch** <main_branch_name>
 - Merge the other branch into the current branch:
   **git merge** <other_branch_name>
+
+## -------------------Detached HEAD--------------------------
+
+## enter detached HEAD mode:
+
+- git checkout <commit_ID> or git switch --detach <commit_ID>
+
+## Get Out of Detached HEAD
+
+- git switch <branch_name>

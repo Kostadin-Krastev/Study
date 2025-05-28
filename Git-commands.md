@@ -146,10 +146,10 @@ The currently active branch is marked with an asterisk \*.
 
 ## -------------------Detached HEAD--------------------------
 
-## enter detached HEAD mode:
+## Enter Detached HEAD mode:
 
 - git checkout <commit_ID> or git switch --detach <commit_ID>
 
-## Get Out of Detached HEAD
+## Get out of Detached HEAD
 
 - git switch <branch_name>

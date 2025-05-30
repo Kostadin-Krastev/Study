@@ -121,6 +121,15 @@ If using PowerShell or Windows Subsystem for Linux (WSL), both dir and ls are wo
 
 **git log**
 
+- Displays a visual representation of branches and merges:
+  **git log --graph**
+
+- Shows each commit on one line (compact format):
+  **git log --oneline**
+
+- Uses color for better readability
+  **git log --color**
+
 - To exit the list:
   **q**
 

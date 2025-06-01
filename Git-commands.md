@@ -1,5 +1,6 @@
 ## Create a new Git repository:
 
+some text for deleting
 **git init**
 
 ---

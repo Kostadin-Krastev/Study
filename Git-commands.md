@@ -1,6 +1,5 @@
 ## Create a new Git repository:
 
-some text for deleting
 **git init**
 
 ---
@@ -60,13 +59,22 @@ For example:
 
 ---
 
-## Restore working directory files
+## Restore files
+
+- Restore a file from the latest changes made in the file (before the file is add to staging area):
+  **git restore <file_name>**
 
 - Restore a file from the staging area (unstage changes):
   **git restore --staged <file_name>**
 
-- Restore a file from the latest commit (removing the changes made in the file):
-  **git restore <file_name>**
+---
+
+## Remove untracked files
+
+- See what would be deleted (dry run — safe): **git clean -n**
+- preview all untracked directories and files would be deleted (dry run — safe): **git clean -fd**
+- remove untracked files: **git clean -f**
+- delete all untracked directories and files: **git clean -df**
 
 ---
 

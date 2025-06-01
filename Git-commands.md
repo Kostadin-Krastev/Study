@@ -71,8 +71,8 @@ For example:
 
 ## Remove untracked files
 
-- See what would be deleted (dry run — safe): **git clean -n**
-- preview all untracked directories and files would be deleted (dry run — safe): **git clean -fd**
+- preview all untracked files that would be deleted (dry run — safe): **git clean -n**
+- preview all untracked directories and files that would be deleted (dry run — safe): **git clean -dn**
 - remove untracked files: **git clean -f**
 - delete all untracked directories and files: **git clean -df**
 

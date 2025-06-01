@@ -59,6 +59,16 @@ For example:
 
 ---
 
+## Restore working directory files
+
+- Restore a file from the staging area (unstage changes):
+  **git restore --staged <file_name>**
+
+- Restore a file from the latest commit (removing the changes made in the file):
+  **git restore <file_name>**
+
+---
+
 ## Check the directory contents:
 
 - **ls** (Unix/Linux/macOS)

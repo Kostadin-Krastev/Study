@@ -78,6 +78,24 @@ For example:
 
 ---
 
+## Remove files from the staging area
+
+### New school
+
+**git restore --staged** <file_name>
+
+### Old school
+
+**git reset HEAD** <file_name>
+
+- unstage all files: **git reset HEAD**
+
+---
+
+## Remove files after commit
+
+**git reset --soft HEAD~1**: <1> is the how many steps I want to go back. (Go 1 commit before HEAD)
+
 ## Check the directory contents:
 
 - **ls** (Unix/Linux/macOS)
@@ -183,10 +201,14 @@ If using PowerShell or Windows Subsystem for Linux (WSL), both dir and ls are wo
 
 ---
 
-## View list of all local branches.
+## List of all local branches.
 
 **git branch**
 The currently active branch is marked with an asterisk \*.
+
+## List of all remote branches
+
+**git branch -r**
 
 ---
 
@@ -196,6 +218,19 @@ The currently active branch is marked with an asterisk \*.
   **git switch** <main_branch_name>
 - Merge the other branch into the current branch:
   **git merge** <other_branch_name>
+
+---
+
+## Deleting Branches
+
+- Delete a Local Branch: **git branch -d**<branch_name>
+
+- Force delete (even if not merged): **git branch -D** <branch_name>
+
+- Deleting multiple branches: **git branch -d**<one_branch_name> <two_branch_name>
+  or **git branch -D**<one_branch_name> <two_branch_name>
+
+- Delete a Remote Branch: **git push origin --delete** <branch_name>
 
 ## -------------------Detached HEAD--------------------------
 

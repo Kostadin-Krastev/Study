@@ -1,4 +1,4 @@
-## Create a new Git repository:
+## Create a new empty Git repository:
 
 **git init**
 
@@ -241,3 +241,11 @@ The currently active branch is marked with an asterisk \*.
 ## Get out of Detached HEAD
 
 - **git switch** <branch_name>
+
+## -------------------.gitignore--------------------------
+
+It is used in Git to specify files and directories that should be ignored by version control.
+
+- Ignore all .log files: **\*.log**
+- Do not ignore file: **!<file_name>.log**
+- Ignore all files in a directory: **<directory_name>\***

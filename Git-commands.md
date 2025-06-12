@@ -105,6 +105,21 @@ If using PowerShell or Windows Subsystem for Linux (WSL), both dir and ls are wo
 
 ---
 
+## Stash changes
+
+save unstaged changes and access them whenever I want.
+
+- Saves changes and remove them from the file: **git stash**
+- Create a Named Stash: **git stash push -m "message goes here"**
+- View Stashed Changes: **git stash list**
+- Apply the Most Recent Stash: **git stash apply**
+- Apply a specific stash: **git stash apply stash@{1}** (1 is the number of stash in the list)
+- Apply and Remove the Stash: **git stash pop**
+- Remove a Stash: **git stash drop stash@{0}** (0 is the number of stash in the list)
+- Remove all stashes: **git stash clear**
+
+---
+
 ## Check Your Current Directory:
 
 **pwd**

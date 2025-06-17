@@ -1,4 +1,9 @@
 table {
-  margin: 0 auto;
-  width: 200px;
+  margin: 100px auto;
+  width: 600px;
+  text-align: left;
+}
+
+th {
+  text-transform: capitalize;
 }

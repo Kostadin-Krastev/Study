@@ -1,19 +1,34 @@
 table {
+  font-size: 20px;
+  text-align: left;
+  line-height: 1.5;
   margin: 100px auto;
   width: 900px;
-  text-align: left;
+  border-collapse: collapse; /*removing gaps between <td> ot collapsing the borders */
 }
 
-thead {
+thead th {
+  width: 25%;
   text-transform: capitalize;
   color: #fff;
   background-color: #087f5b;
+}
+
+thead th:hover {
+  background-color: rgb(38, 160, 118);
 }
 
 tbody tr:nth-child(even) {
   background-color: #e7e9eb;
 }
 
-tbody td:first-child {
-  font-weight: bold;
+tbody tr:nth-child(even):hover {
+  background-color: #cbccce;
+}
+
+th,
+td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
 }

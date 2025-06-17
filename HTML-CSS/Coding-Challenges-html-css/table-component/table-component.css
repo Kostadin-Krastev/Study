@@ -1,9 +1,19 @@
 table {
   margin: 100px auto;
-  width: 600px;
+  width: 900px;
   text-align: left;
 }
 
-th {
+thead {
   text-transform: capitalize;
+  color: #fff;
+  background-color: #087f5b;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e7e9eb;
+}
+
+tbody td:first-child {
+  font-weight: bold;
 }

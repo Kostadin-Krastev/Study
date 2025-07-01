@@ -31,10 +31,15 @@ a:visited {
 }
 
 a:hover,
-a:active {
+a:active,
+a.active-link {
   border-radius: 50%;
   color: #fff;
   background-color: #087f5b;
+}
+
+.dots {
+  color: #868e96;
 }
 
 /* ARROW BUTTONS */

@@ -120,6 +120,64 @@ save unstaged changes and access them whenever I want.
 
 ---
 
+## Recover Lost Work in Git (reflog)
+
+**git reflog** - It works like a history of the branch, and helps with:
+
+- Recover lost commits;
+- Undo resets or rebases;
+- Find "dangling" or orphaned commits.
+
+Example:
+
+$ git reflog
+
+d9fbc3f HEAD@{0}: commit: Fix broken link in footer
+
+3e9c7e2 HEAD@{1}: reset: moving to HEAD~1
+
+c672a47 HEAD@{2}: commit: Add new contact form
+
+a5f9b90 HEAD@{3}: rebase -i (finish): returning to refs/heads/main...
+
+Each entry includes:
+
+- A short commit hash
+
+- The HEAD reference at a point in time (e.g., HEAD@{1})
+
+- The action performed (commit, reset, etc.)
+
+- An optional message
+
+With command **git reset --hard** and the **hash** of the commit I can go back to that state and restore all my work or deleted files
+
+### Reflog entries expire after a while:
+
+- Typically 90 days for most references
+
+- I can clear them manually with:
+
+**git reflog expire --expire=now --all**
+
+**git gc --prune=now**
+
+### Use Case
+
+**Recover a Lost Commit**
+
+Suppose you ran git reset --hard and lost some work:
+
+git reflog
+
+git checkout <commit_hash>
+
+In detached HEAD I can create a branch to save it:
+
+**git checkout -b** <recovery_branch_name>
+
+---
+
 ## Check Your Current Directory:
 
 **pwd**

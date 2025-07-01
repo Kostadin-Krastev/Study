@@ -50,3 +50,12 @@ a:active {
 .arrow-button-icon {
   stroke: #087f5b;
 }
+
+/* hover effect of the button */
+.arrow-button:hover {
+  background-color: #087f5b;
+}
+
+.arrow-button:hover .arrow-button-icon {
+  stroke: #fff;
+}

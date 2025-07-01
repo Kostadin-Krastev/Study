@@ -30,7 +30,10 @@ a:hover {
   margin: 100px auto;
 }
 
+/* ARROW BUTTONS */
 .arrow-button {
+  height: 48px;
+  width: 48px;
   padding: 10px;
   border: 1px solid #087f5b;
   border-radius: 50%;
@@ -39,7 +42,5 @@ a:hover {
 }
 
 .arrow-button-icon {
-  height: 24px;
-  width: 24px;
   stroke: #087f5b;
 }

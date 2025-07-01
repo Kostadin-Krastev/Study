@@ -1,3 +1,11 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 650px;
+  margin: 100px auto;
+}
+
 ul {
   padding: 0;
 }
@@ -7,27 +15,25 @@ li {
   list-style-type: none;
 }
 
-a {
+/* Styling the links */
+a:link,
+a:visited {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  width: 36px;
   margin: 15px;
   font-size: 25px;
   text-decoration: none;
   color: #343a40;
 }
 
-a:hover {
-  padding: 5px 15px;
-  margin: 0;
+a:hover,
+a:active {
   border-radius: 50%;
   color: #fff;
   background-color: #087f5b;
-}
-
-.pagination-element {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 500px;
-  margin: 100px auto;
 }
 
 /* ARROW BUTTONS */

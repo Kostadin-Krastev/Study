@@ -287,10 +287,22 @@ The currently active branch is marked with an asterisk \*.
 
 ## Merge branches
 
+### fast-forward merge
+
 - Switch to the branch you want to merge into (usually main or master)
   **git switch** <main_branch_name>
 - Merge the other branch into the current branch:
   **git merge** <other_branch_name>
+
+Type of merge that occurs when there is a direct path from the current branch to the branch being merged.
+If no new commits have been added to main branch since the branch feature was created, then main can be fast-forwarded to commit.
+
+Characteristics of Fast-Forward Merge:
+
+- No merge commit is created.
+- History is linear and cleaner.
+- Happens when the target branch is an ancestor of the source branch.
+- Often used when working alone or when clean history is preferred.
 
 ---
 

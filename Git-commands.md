@@ -287,12 +287,12 @@ The currently active branch is marked with an asterisk \*.
 
 ## Merge branches
 
-### fast-forward merge
+### Fast-forward merge
 
 - Switch to the branch you want to merge into (usually main or master)
   **git switch** <main_branch_name>
 - Merge the other branch into the current branch:
-  **git merge** <other_branch_name>
+  **git merge** <other_branch_name> Fast-forward if possible (no merge commit)
 
 Type of merge that occurs when there is a direct path from the current branch to the branch being merged.
 If no new commits have been added to main branch since the branch feature was created, then main can be fast-forwarded to commit.
@@ -303,6 +303,32 @@ Characteristics of Fast-Forward Merge:
 - History is linear and cleaner.
 - Happens when the target branch is an ancestor of the source branch.
 - Often used when working alone or when clean history is preferred.
+
+### Recursive Merge
+
+When Git can't do a fast-forward merge (because the branches have diverged), it performs a three-way merge using the recursive strategy by default.
+
+This involves:
+
+1. Finding the common ancestor of the two branches (called the "merge base"),
+2. Comparing the changes made in both branches,
+3. Merging those changes into a new merge commit.
+
+Example:
+
+<pre>
+A---B---C (main)
+     \     \
+      D---E---F (feature)
+</pre>
+
+**git merge --no-ff** <branch_name>: Always creates a merge commit. Preserve feature history, clearer logs, easier reverts
+
+#### In Summary
+
+**git merge** <branch_name> creates Fast-forward if possible (no merge commit). If Fast-forward merge is not posible then creates automatically Recursive Merge.
+
+**git merge --no-ff** <branch_name> creates Recursive Merge and always creates a merge commit. Preserve feature history, clearer logs, easier reverts
 
 ---
 

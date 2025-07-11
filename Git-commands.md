@@ -285,7 +285,18 @@ The currently active branch is marked with an asterisk \*.
 
 ---
 
-## Merge branches
+## Deleting Branches
+
+- Delete a Local Branch: **git branch -d**<branch_name>
+
+- Force delete (even if not merged): **git branch -D** <branch_name>
+
+- Deleting multiple branches: **git branch -d**<one_branch_name> <two_branch_name>
+  or **git branch -D**<one_branch_name> <two_branch_name>
+
+- Delete a Remote Branch: **git push origin --delete** <branch_name>
+
+## -------------------Merge branches--------------------------
 
 ### Fast-forward merge
 
@@ -332,16 +343,42 @@ A---B---C (main)
 
 ---
 
-## Deleting Branches
+### Rebase
 
-- Delete a Local Branch: **git branch -d**<branch_name>
+**git rebase**: lets you move or combine a sequence of commits to a new base commit (<u>re-writes code history!</u>). It's typically used to make your Git history cleaner and more linear.
 
-- Force delete (even if not merged): **git branch -D** <branch_name>
+<u>Caution</u>
 
-- Deleting multiple branches: **git branch -d**<one_branch_name> <two_branch_name>
-  or **git branch -D**<one_branch_name> <two_branch_name>
+- Rewriting history: Rebase rewrites commit history. Avoid using it on public/shared branches unless everyone agrees.
+- Use rebase only on local commits or your own feature branches.
+- Git recommends to never use Rebase.
 
-- Delete a Remote Branch: **git push origin --delete** <branch_name>
+Example:
+
+- Updating a feature branch with changes from the main branch:
+<pre>
+git checkout feature-branch
+git rebase main
+</pre>
+
+This applies feature-branch commits on top of the latest main, as if you had started from there.
+
+---
+
+### Cherry-pick
+
+**git cherry-pick** <commit_hash>: apply a specific commit from one branch onto another branch, without merging or rebasing the entire branch.
+
+Example:
+
+Copying a hotfix from main to develop: You fixed a bug directly in main, but now you want the same fix in develop:
+
+<pre>
+git switch develop
+git cherry-pick commit-hash
+</pre>
+
+---
 
 ## -------------------Detached HEAD--------------------------
 

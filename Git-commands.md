@@ -120,6 +120,43 @@ save unstaged changes and access them whenever I want.
 
 ---
 
+## Git tag
+
+Used to mark specific points in the repository’s history as important.
+
+### Lightweight Tags
+
+lightweight tag is just a reference (a file containing the commit hash) and doesn’t store any extra information. Useful for temporary bookmarks or local markers where additional metadata isn’t required.
+
+**git tag** <tag_name> <has_number_commit>: creates tag to the commit with the given has.
+Example:
+
+<pre>git tag version-1.0 04d93ab0e1198d11334fcf6b31d53408ba2f8912</pre>
+
+### Annotated Tags
+
+- Metadata-Rich: They are stored as full objects in the Git database, containing metadata like the tagger's name, email, date, and a tagging message.
+- Cryptographically Signed (optional): They can be signed with GPG, adding an additional layer of trust.
+- Usage: Best for public releases and formal versioning where history and authenticity matter.
+
+**git tag** -a <tag_name> -m <"info message for the tag">
+
+Example:
+
+<pre>git tag -a version-2.2 -m 'this is the version 2.2'</pre>
+
+#### Listing and Viewing Tags
+
+- **git tag**: List All Tags
+
+- **git show** <tag_name>: Show Detailed Tag Information - displays the tagger information, message, and the commit details linked to that tag.
+
+#### Deleting Tags
+
+- **git tag -d** <name_of_the_tag>: Deleting a Local Tag
+
+---
+
 ## Recover Lost Work in Git (reflog)
 
 **git reflog** - It works like a history of the branch, and helps with:

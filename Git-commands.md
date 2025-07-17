@@ -320,6 +320,18 @@ The currently active branch is marked with an asterisk \*.
 
 **git branch -r**
 
+## lists all branches - local and remote.
+
+**git branch -a**: shows Local branches and Remote-tracking branches
+
+Example:
+
+<pre>
+git branch -a
+* main
+  remotes/origin/main
+  </pre>
+
 ---
 
 ## Deleting Branches

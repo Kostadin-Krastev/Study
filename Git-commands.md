@@ -332,6 +332,20 @@ git branch -a
   remotes/origin/main
   </pre>
 
+## List of references (branches, tags, HEAD, etc.) in a remote repository
+
+**git ls-remote**
+
+Example:
+
+<pre>
+git ls-remote
+6e2ee78b868e943f8063cf26843ba321da92b604        HEAD
+ece28462d06189a376cf0f6461cb523cf76f24ce        refs/heads/feature
+6e2ee78b868e943f8063cf26843ba321da92b604        refs/heads/feature-remote
+6e2ee78b868e943f8063cf26843ba321da92b604        refs/heads/main
+</pre>
+
 ---
 
 ## Deleting Branches

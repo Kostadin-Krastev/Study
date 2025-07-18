@@ -320,32 +320,6 @@ The currently active branch is marked with an asterisk \*.
 
 **git branch -r**
 
-## lists all branches - local and remote.
-
-**git branch -a**: shows Local branches and Remote-tracking branches
-
-Example:
-
-<pre>
-git branch -a
-* main
-  remotes/origin/main
-  </pre>
-
-## List of references (branches, tags, HEAD, etc.) in a remote repository
-
-**git ls-remote**
-
-Example:
-
-<pre>
-git ls-remote
-6e2ee78b868e943f8063cf26843ba321da92b604        HEAD
-ece28462d06189a376cf0f6461cb523cf76f24ce        refs/heads/feature
-6e2ee78b868e943f8063cf26843ba321da92b604        refs/heads/feature-remote
-6e2ee78b868e943f8063cf26843ba321da92b604        refs/heads/main
-</pre>
-
 ---
 
 ## Deleting Branches
@@ -442,6 +416,57 @@ git cherry-pick commit-hash
 </pre>
 
 ---
+
+## Download updates from a remote repository
+
+### git fetch
+
+- Connects to a remote repository (like origin)
+- Downloads new commits, branches, and tags
+- Updates your local copy of the remote tracking branches (e.g., origin/main)
+- Does NOT change your working directory or merge changes into your current branch
+
+**git fetch origin**: gets the latest changes from the origin remote
+
+## git pull
+
+- Connects to a remote repository (e.g., origin)
+- Fetches the latest changes (commits, branches)
+- Merges the fetched changes into your current branch
+
+**git pull** <remote_name> <branch_name>
+
+Example:
+
+<pre>
+git pull origin main
+</pre>
+
+This fetches and merges the latest changes from the main branch on the origin remote into your current branch.
+
+<u>Important Notes:</u>
+
+- If there are conflicting changes, Git will pause the pull and ask you to resolve the merge conflicts.
+- It modifies your working directory, unlike git fetch.
+
+## Create a new local branch that is set to track a remote branch
+
+**git branch --track** <new_local_branch> <remote_origin>/<remote_branch_name>
+
+- Creates a local branch (if it doesn’t already exist)
+- Links it to a remote branch (tracking setup)
+- So that commands like git pull and git push know which remote branch to work with
+
+Example:
+
+<pre>
+git branch --track feature-x origin/feature-x
+</pre>
+
+This will:
+
+- Create a new local branch named feature-x
+- Set it to track origin/feature-x
 
 ## -------------------Detached HEAD--------------------------
 

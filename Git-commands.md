@@ -349,6 +349,27 @@ Example Output:
 - The upstream (tracking) branch, if one is set
 - Whether your branch is ahead or behind its upstream
 
+## Detailed information about the remote named origin
+
+**git remote show origin**
+
+It helps you understand how your local branches relate to the remote branches, what you're tracking, and whether you’re ahead or behind.
+
+<u>What It Shows:</u>
+
+- Fetch and push URLs (where Git fetches/pushes data)
+- Tracked remote branches
+- Local branches configured to track remote branches
+- Whether your local branches are ahead, behind, or diverged from the remote
+- Any branches marked for push by default
+
+<u>Why use git remote show origin?</u>
+
+- To check if your local branches track remote branches
+- To confirm push/pull configuration
+- To detect if your branches are out of sync
+- To troubleshoot tracking or syncing issues
+
 ---
 
 ## Deleting Branches

@@ -303,6 +303,34 @@ git checkout -b recovery_branch_name
 
 **git switch -c** <new_branch_name>
 
+## Creating and pushing a branch to a remote and setting it as the upstream tracking branch
+
+**git push -u** <remote_name> <new_branch_name>: It is a shorthand for pushing a branch to a remote and setting it as the upstream tracking branch.
+
+- <remote_name> – usually origin
+- <new_branch_name> – the name of the new local branch that is push.
+
+<u>What -u (or --set-upstream) does:</u>
+
+- Pushes your local branch to the remote if it doesn’t exist yet.
+- Links your local branch with the remote branch.
+- Sets the upstream so you can later use:
+
+<u>Example:</u>
+
+<pre>
+git push -u origin feature/login
+</pre>
+
+- Pushes the feature/login branch to origin
+- Tells Git that feature/login on your local machine should track origin/feature/login
+- After this, you can just run:
+
+<pre>
+git push     # to push changes
+git pull     # to pull changes
+</pre>
+
 ---
 
 ## Switching branches

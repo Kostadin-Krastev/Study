@@ -478,6 +478,10 @@ git cherry-pick commit-hash
 
 **git fetch origin**: gets the latest changes from the origin remote
 
+**git diff main origin/main**: See the differences between my files and latest changes from the origin remote
+
+**git merge origin/main**: Merge the new changes
+
 ## git pull
 
 - Connects to a remote repository (e.g., origin)

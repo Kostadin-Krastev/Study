@@ -522,6 +522,38 @@ This will:
 - Create a new local branch named feature-x
 - Set it to track origin/feature-x
 
+## git clone - create a local copy of a remote repository
+
+**git clone** <repository_url>
+
+<u>What git clone does:</u>
+
+- Creates a new directory with the project name (or a custom name if specified).
+- Initializes a .git directory inside it (i.e., sets it up as a Git repo).
+- Downloads all files and commits from the remote repo.
+- Sets the remote as origin by default.
+- Checks out the default branch (usually main or master).
+
+<u>Example:</u>
+
+<pre>
+git clone https://github.com/username/repo-name.git
+</pre>
+
+This will:
+
+- Create a local folder named repo-name
+- Pull the code from GitHub
+- Set origin to point to https://github.com/username/repo-name.git
+
+<u>Optional: Clone to a specific folder</u>
+
+<pre>
+git clone https://github.com/username/repo-name.git my-folder
+</pre>
+
+This clones the repo into a folder named my-folder.
+
 ## -------------------Detached HEAD--------------------------
 
 ## Enter Detached HEAD mode:

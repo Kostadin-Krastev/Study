@@ -409,7 +409,11 @@ It helps you understand how your local branches relate to the remote branches, w
 - Deleting multiple branches: **git branch -d**<one_branch_name> <two_branch_name>
   or **git branch -D**<one_branch_name> <two_branch_name>
 
-- Delete a Remote Branch: **git push origin --delete** <branch_name>
+### Delete a Remote Branch:
+
+**git push origin --delete** <branch_name>
+
+**git fetch --prune**: delete a local reference to a remote-tracking branch (after the remote branch was deleted)
 
 ## -------------------Merge branches--------------------------
 

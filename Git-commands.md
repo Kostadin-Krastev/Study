@@ -303,7 +303,7 @@ git checkout -b recovery_branch_name
 
 **git switch -c** <new_branch_name>
 
-## Creating and pushing a branch to a remote and setting it as the upstream tracking branch
+## Pushing a branch to a remote and setting it as the upstream tracking branch
 
 **git push -u** <remote_name> <new_branch_name>: It is a shorthand for pushing a branch to a remote and setting it as the upstream tracking branch.
 
@@ -423,6 +423,7 @@ It helps you understand how your local branches relate to the remote branches, w
   **git switch** <main_branch_name>
 - Merge the other branch into the current branch:
   **git merge** <other_branch_name> Fast-forward if possible (no merge commit)
+- After merge the branches have to push the changes with **git push**
 
 Type of merge that occurs when there is a direct path from the current branch to the branch being merged.
 If no new commits have been added to main branch since the branch feature was created, then main can be fast-forwarded to commit.

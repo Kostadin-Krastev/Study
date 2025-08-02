@@ -1,13 +1,22 @@
 'use strict';
-let numNeighbours = 4;
-numNeighbours = '1';
-const num = Number(numNeighbours);
-// numNeighbours = 0;
+const bulgaria = {
+  language: 'bulgarian',
+  population: 4000000,
+  isIsland: false,
+};
 
-if (num === 1) {
-  console.log('Only 1 neighbour');
-} else if (num > 1) {
-  console.log('More than one border');
+let saraWants = {
+  language: 'english',
+  population: 50000000,
+  isIsland: false,
+};
+
+if (
+  bulgaria.language === saraWants.language &&
+  bulgaria.population < saraWants.population &&
+  bulgaria.isIsland === saraWants.isIsland
+) {
+  console.log('You should live in Bulgaria');
 } else {
-  console.log('No borders');
+  console.log('Choose different country');
 }

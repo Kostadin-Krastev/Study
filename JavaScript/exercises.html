@@ -3,25 +3,20 @@
 
 <head>
     <meta charset=utf-8 />
-    <title>Return first and last name from a form</title>
+    <title>JS DOM paragraph style</title>
 </head>
 
 <body>
-    <form id="form1" onsubmit="getFormvalue()">
-        First name: <input type="text" name="fname" value="David"><br>
-        Last name: <input type="text" name="lname" value="Beckham"><br>
-        <input type="submit" value="Submit">
-    </form>
+    <p id='text'>JavaScript Exercises</p>
+    <div>
+        <button onclick="changeBackground()">Change</button>
+    </div>
 </body>
 <script>
-    function getFormvalue() {
-        event.preventDefault();
-        const formElement = document.getElementById('form1')
-        const firstNameInputElement = formElement.elements['fname'];
-        const lastNameInputElement = formElement.elements['lname'];
-        const takeElementsValue = `First name is: ${firstNameInputElement.value}, and the last name is ${lastNameInputElement.value}`
-
-        console.log(takeElementsValue);
+    function changeBackground() {
+        const paragraphElement = document.getElementById('text')
+        const changeParagraphBackgroundColor = paragraphElement.style.backgroundColor = '#6741d9';
+        const paragraphWidth = paragraphElement.style.width = '150px'
     }
 </script>
 

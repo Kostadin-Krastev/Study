@@ -1,28 +1,13 @@
-// Task 1
-let bulgariaPopulation = 6000000;
-const splitCountryPopulation = bulgariaPopulation / 2;
+'use strict';
+let numNeighbours = 4;
+numNeighbours = '1';
+const num = Number(numNeighbours);
+// numNeighbours = 0;
 
-console.log(splitCountryPopulation);
-
-// Task 2
-bulgariaPopulation++;
-
-console.log(bulgariaPopulation);
-
-// Task 3
-let finlandPopulation = 6000000;
-const compereCountreysPopulation = bulgariaPopulation > finlandPopulation;
-
-console.log(compereCountreysPopulation);
-
-// Task 4
-const averageCountryPopulation = 33000000;
-const compereAverageCountreysPopulation =
-  averageCountryPopulation < bulgariaPopulation;
-
-console.log(compereAverageCountreysPopulation);
-
-// Task 5
-const description = `Bulgaria is in Europe, and it's ${bulgariaPopulation} milion people speaks bulgarian`;
-
-console.log(description);
+if (num === 1) {
+  console.log('Only 1 neighbour');
+} else if (num > 1) {
+  console.log('More than one border');
+} else {
+  console.log('No borders');
+}

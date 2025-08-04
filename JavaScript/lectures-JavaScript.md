@@ -478,6 +478,203 @@ console.log(century);
 
 ## 07. Type Conversion and Coercion
 
+### Type conversion
+
+Type conversion is when we manually convert from one type to another. They are three types that we convert
+
+- to a string;
+- to a number;
+- to a boolian.
+
+Example for type conversion:
+
+```javascript
+const inputYear = '1991';
+console.log(inputYear + 18);
+```
+
+We can't do this calculation because JavaScript sees "inputYear" as a string. Therefore it will not add 18 to 1991 as a number but will add 18 to 1991 as a string. The result will be 199118.
+
+The solution is to use build in Number function:
+
+```javascript
+consol.log(Number(inputYear) + 18);
+```
+
+If we want to convert something in to string we use the String function.
+
+Example:
+
+```javascript
+consol.log(String(23)) - the number now is a string
+```
+
+### Type coercion
+
+Type coercion is when JavaScript automatically converts types for us completely hidden from us.
+
+Example:
+
+```javascript
+console.log('I`m ' + 23 + ' years old');
+```
+
+here the number 23 will be converted into a string and the result will be (Im 23 years old). Always when we have an operation with addition (+) between a string and a number, the number will be converted into a string. And the opposite when we have an operation with subtraction, multiplication, and division (-, \*, /) between a string and a number, the strings will be converted into a number.
+
+Example:
+
+```javascript
+console.log("23" - "10" - 3) - here the result will be 10 because subtraction convert stings into numbers.
+
+console.log("23" * "10" * 3) - here the result will be 690 because multiplication convert string into numbers.
+
+console.log("23" / "2") - here the result will be 11,5 because division convert string into numbres.
+```
+
+---
+
+## 08. Truthy and Falsy Values
+
+Falsy (sometimes written falsey) value is a value that is considered false when encountered in a Boolean context.
+
+The following table provides a complete list of JavaScript falsy values:
+
+<pre>
+| Falsy Value | Type      | Description                                                       |
+| ----------- | --------- | ----------------------------------------------------------------- |
+| `false`     | Boolean   | The Boolean value `false`.                                        |
+| `0`         | Number    | The number zero.                                                  |
+| `-0`        | Number    | Negative zero (distinct from `0` in some cases).                  |
+| `0n`        | BigInt    | BigInt version of zero.                                           |
+| `""`        | String    | An empty string.                                                  |
+| `null`      | Object    | Represents the intentional absence of any object value.           |
+| `undefined` | Undefined | A variable that has not been assigned a value.                    |
+| `NaN`       | Number    | "Not-a-Number" result of invalid or undefined numeric operations. |
+</pre>
+
+Example for Falsy value:
+
+```javascript
+const money = 0;
+if (money) {
+  console.log('Don`t spend it all');
+} else {
+  console.log('You should get a job!');
+}
+```
+
+Here money value is a number 0 (zero). Number 0 (zero) is a false value. There for in this if else statement number 0 will be a falsy value which is why the result of the if else statement will be the string "You should get a job!".
+If we change the number 0 into 10 then the result will be true and the printed string will be "Don`t spend it all".
+
+Another example:
+
+```javascript
+const firstName;
+if(firstName) {
+    console.log("Nice to meet you");
+} Else {
+    console.log("Who are you?")
+}
+```
+
+In this example the variable firstName is empty. There for an empty variable is a falsy value and the result in this if else statement will be the string "Who are you?".
+
+### Truthy value
+
+Truthy value is a value that is considered true when encountered in a Boolean context. All values are truthy unless they are defined as falsy. That is, all values are truthy except **false**, **0**, **-0**, **0n**, **""**, **null**, **undefined**, and **NaN**.
+
+---
+
+## 09. Equality Operators == vs. === And the not equal operator != vs !==
+
+### What are Comparison Operators in JS?
+
+**Comparison operators** in programming languages are used to compare two values. These operators return a boolean value (true or false) based on the condition. Sence these operators are used in decision making or as conditional statements for loops.
+
+### The == and === operators
+
+**The == and === operators** in JavaScript are comparison operators that we use to determine if two values are equal or not.
+
+The **==** operator performs a loose equality comparison that performs type coercion if necessary to make the comparison possible.
+
+Exampel:
+
+<pre>
+"18" == 18
+the string will be equal to a number and the result will be true
+</pre>
+
+### The === operator
+
+The **===** operator, on the other hand, performs a strict equality comparison that does not perform type coercion and requires the operands to have the same type (as well as the same value).
+
+Exampel:
+
+<pre>
+"18" === 18
+the string will be not equal to a number and the result will be false
+</pre>
+
+As a general rule for a clean code, we must avoid **loose operator (==)** as much as possible.
+
+### The not equal operator != vs !==
+
+### Loose vertion (!=)
+
+Loose version of not equal or **inequality operator (!=)** checks whether two values are not equal and returns a boolean value. This operator tries to compare values irrespective of whether they are of different types.
+
+**The strict version (!==)** does not attempt to do so and returns false if the values are unequal or of different types.
+
+As a general rule for a clean code, we must avoid **loose operator (!=)** as much as possible.
+
+### Lecture task:
+
+Creating a pop-up window with question and field for input the answer. We store it in a variable
+
+```javascript
+const favourNumber = prompt('What is your favorite number?');
+if (favourNumber == 23) {
+  // here 23 is a string. But because we use loose operator (==) the result will be "23" == 23 and the progrm will show the message Cool! That's an amazing number. If we use strict operator (===) the program will not show as the text because string "23" is not equale to the number 23.
+  console.log("Cool! That's an amazing number.");
+}
+
+// like this
+if (faivourNumber === 23) {
+  console.log("Cool! That's an amazing number.");
+}
+```
+
+```javascript
+// if we want to work all the code above with strict operator (===) we have to convert the prompt string into a number like this:
+const faivourNumber = Number(prompt('What is your favourite numer?')); // converting string into a number
+if (faivourNumber === 23) {
+  // here number from the variable is no longer a string. There for the result is 23 === 23
+  console.log("Cool! That's an amazing number.");
+} else if (faivourNumber === 7) {
+  console.log('7 is also a coll number.');
+} else {
+  console.log('Number is not 23 or 7.');
+}
+
+if (faivourNumber !== 23) console.log('Why not 23?'); // here !== means different than 23
+```
+
+---
+
+## 10. Boolean Logic
+
+Boolean logic is a branch of Computer science that uses true and false values to solve complex logical problems.
+
+Most basic logical operators are:
+
+- **And (&&)**;
+- **or (||)**;
+- **not (!)**.
+
+---
+
+## 11. Logical Operators
+
 ---
 
 ## 00A. DOM and Events fundamentals

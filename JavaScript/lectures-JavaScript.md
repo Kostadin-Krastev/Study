@@ -675,6 +675,124 @@ Most basic logical operators are:
 
 ## 11. Logical Operators
 
+Logical operators are used to determine the logic between variables or values.
+
+<pre>
+Given that x = 6 and y = 3, the table below explains the logical operators:
+
+Operator	  Description	         Example
+-------------------------------------------
+&&	and	    (x < 10 && y > 1)    is true	
+-------------------------------------------
+||	or	    (x == 5 || y == 5)   is false	
+-------------------------------------------
+!	not	      !(x == y)            is true
+</pre>
+
+- Examples with **&& and** operator
+
+```javascript
+const hasDriverLicens = true;
+const hasGoodVison = true;
+
+console.log(hasDriverLicens && hasGoodVison); // the result will be true
+```
+
+```javascript
+const hasDriverLicens = true;
+const hasGoodVison = false;
+
+console.log(hasDriverLicens && hasGoodVison); // the result will be false
+```
+
+- Example with **|| or** operator
+
+```javascript
+const hasDriverLicens = true;
+const hasGoodVision = false;
+
+console.log(hasDriverLicens || hasGoodVision); // the result will true. Here is enough for one of the variables to be true for the whole operation to be true.
+```
+
+- Example with **! not** operator
+
+```javascript
+const hasDriverLicens = true;
+
+console.log(!hasDriverLicens); // the result will be false
+```
+
+- Example with **&& and** operator
+
+```javascript
+const hasDriverLicens = true;
+const hasGoodVision = false;
+
+if (hasDriverLicens && hasGoodVision) {
+  console.log('Shara is able to drive');
+} else {
+  console.log('Someone else should drive.');
+}
+// here the result will be "Someone else should drive" because hasGoodVision is false. To have "Shara is able to drive" both hasDriverLicens and hasGoodVions must be true.
+```
+
+- Example with **&& and** operator, and **! or** operator
+
+```javascript
+const hasDriverLicens = true;
+const hasGoodVision = true;
+const isTired = false;
+
+if (hasDriverLicens && hasGoodVision && !isTired) {
+  console.log('Shara is able to drive.');
+} else {
+  console.log('Someone else should drive.');
+}
+```
+
+---
+
+## 12. The switch Statement
+
+```javascript
+const day = 'thurstday';
+
+switch (day) {
+  case 'monday':
+    console.log('Planing courses');
+    console.log('Go to coding meetup');
+    break;
+  case 'tuesday':
+    console.log('Preaper theory videos');
+    break;
+  case 'wensday':
+  case 'thurstday':
+    console.log('Write code examples');
+    break;
+  case 'friday':
+    console.log('Record videos');
+    break;
+  case 'saturday':
+  case 'sunday':
+    console.log('Enjoy the weekend');
+    break;
+  default:
+    console.log('Not a valid day');
+}
+
+if (day === 'monday') {
+  console.log('It is monday');
+} else if (day === 'thurstday') {
+  console.log('It is thurstday');
+} else {
+  console.log('It is not  a day');
+}
+```
+
+---
+
+## 14. Statements and Expressions
+
 ---
 
 ## 00A. DOM and Events fundamentals

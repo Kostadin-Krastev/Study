@@ -793,6 +793,317 @@ if (day === 'monday') {
 
 ## 14. Statements and Expressions
 
+### Expressions
+
+An **expression** is a piece of code that produces a value. It can be a combination of variables, values, and operators. Expressions can be as simple as a single variable or as complex as a full mathematical equation.
+
+Example:
+
+<pre>
+3 + 4 is an expression. Result 7 is their value
+At its core, an expression is a bit of JavaScript code that produces a value.
+</pre>
+
+For example, these are all expressions:
+
+<pre>
+1 → produces 1
+"hello" → produces "hello"
+5 * 10 → produces 50
+num > 100 → produces either true or false
+isHappy ? "🙂" : "🙁" → produces an emoji
+[1, 2, 3].pop() → produces the number 3
+Expressions can contain expressions.
+</pre>
+
+### Statements
+
+A **statement** is a complete line of code that performs a specific action. It is like a command that instructs the computer to do something.
+Statement is like bigger piece of code that is executed and does not produce a value on it self.
+A JavaScript program is a sequence of statements. Each statement is an instruction for the computer to do something.
+
+Here are some examples of statements in JavaScript:
+
+```javascript
+let hi = 5;
+
+if (hi > 10) {
+  // More statements here
+}
+```
+
+**Statements** are the rigid structure that holds our program together, while **expressions** fill in the details.
+
+Statements often have "slots" for expressions. We can put any expression we like into those slots.
+
+For example, declaring a variable has an expression slot:
+
+```javascript
+let hi = // some expression;
+```
+
+In summary, **statements** are like complete sentences or commands in JavaScript, while **expressions** are like words that produce values.
+An <u>important distinction is that expressions can be part of statements</u>, but not all statements are expressions.
+For example, an if statement is not an expression because it doesn't produce a value, while a ternary operator is an expression because it does produce a value.
+
+---
+
+## 15. The Conditional (Ternary) Operator
+
+The **conditional operator**, often referred to as the **ternary operator**, is a compact way to write conditional statements in JavaScript. It provides a shorthand for expressing simple if-else logic in a single line.
+
+The **ternary operator** <u>is often used for short, simple conditional assignments or to provide a default value</u>. However, it's essential to use it judiciously to maintain code readability. <u>Complex conditions or multiple nested ternary operators can make code harder to understand</u>. In such cases, it might be more readable to use traditional if-else statements.
+
+Example for the structure of Ternery operator:
+
+<pre>
+condition ? expressionIfTrue : expressionIfFalse;
+</pre>
+
+Here's a breakdown of how it works:
+
+- **condition**: An expression that is evaluated to either true or false.
+- **expressionIfTrue**: The value to be returned if the condition is true.
+- **expressionIfFalse**: The value to be returned if the condition is false.
+  The idea is that the entire expression evaluates to expressionIfTrue if the condition is true, and to expressionIfFalse otherwise.
+
+Example:
+
+```javascript
+const age = 3;
+age >= 18
+  ? console.log('I like to drink')
+  : console.log("I'am not alowed to drink");
+```
+
+We can store Ternery operator in Variables
+
+```javascript
+const age = 23;
+const drink = age >= 18 ? 'I like to drink wine :)' : "I'm not alowed to drink";
+console.log(drink);
+```
+
+Example of Ternary operator inside of Template literal
+
+```javascript
+console.log(`I like to drink ${age >= 18 ? 'wine' : 'water'}`);
+```
+
+---
+
+## 16. Strict Mode
+
+**Strict mode** is a feature in JavaScript that was introduced in ECMAScript 5 (ES5). It is a way to opt into a restricted version of JavaScript that disallows certain error-prone features or behavior, promotes best practices, and makes it easier to write secure and maintainable code. <u>Strict mode helps catch common coding errors and prevents the usage of some poorly designed features.</u>
+
+To enable strict mode, you simply include the following string at the beginning of a script or a function:
+
+<pre>
+"use strict";
+</pre>
+
+Strict mode makes several changes to normal JavaScript semantics:
+
+- Eliminates some JavaScript silent errors by changing them to throw errors.
+- Fixes mistakes that make it difficult for JavaScript engines to perform optimizations: strict mode code can sometimes be made to run faster than identical code that's not strict mode.
+- Prohibits some syntax likely to be defined in future versions of ECMAScript.
+
+<u>Using strict mode is generally a good practice because it helps catch errors that might otherwise go unnoticed and enforces better coding habits</u>.
+
+<u>It's important to note that strict mode applies either to the entire script or to an individual function, and it's not reversible</u>. Once strict mode is enabled, it remains in effect for the entire script or function.
+
+When strict mode is enabled, the following changes occur:
+
+- **Variable Declaration**: Variables must be declared with var, let, or const before they are used. Assigning a value to an undeclared variable, or using delete on a variable or function name, is not allowed.
+
+```javascript
+// This will throw an error in strict mode
+x = 10;
+```
+
+- **Assignment Restrictions**: Assigning values to read-only properties, global objects, or non-writable global variables results in an error.
+
+```javascript
+// This will throw an error in strict mode
+NaN = 42;
+```
+
+- **Octal Literal**: Octal literals (e.g., 0123) are not allowed.
+
+```javascript
+// This will throw an error in strict mode
+var num = 0123;
+```
+
+- **Duplicate Parameter Names**: Function parameter names must be unique.
+
+```javascript
+// This will throw an error in strict mode
+function duplicateParams(a, a) {
+  // function body
+}
+```
+
+- **with Statement**: The use of the with statement is not allowed.
+
+```javascript
+// This will throw an error in strict mode
+with (obj) {
+  // code that uses properties of obj directly
+}
+```
+
+- **eval and arguments**: Assigning values to eval and arguments is not allowed.
+
+```javascript
+// This will throw an error in strict mode
+eval = 42;
+```
+
+- **this in Functions**: In functions, the this value is undefined if the function is not called as a method or through call/apply.
+
+```javascript
+function strictModeExample() {
+  console.log(this); // 'undefined' in strict mode
+}
+strictModeExample();
+```
+
+```javascript
+'use strict';
+let hasDriverLicens = false;
+const pastTest = true;
+```
+
+---
+
+## 17. Functions
+
+In JavaScript, **functions** are a fundamental building block of the language. They allow you to group code into reusable units and perform specific tasks. <u>Function is a piece of code that we can use over and over in our code</u>. Here are some key aspects of functions in JavaScript:
+
+### Function Declaration:
+
+You can declare a function using the **function keyword**, followed by the function name, a list of parameters enclosed in parentheses, and the function body enclosed in curly braces.
+
+Example:
+
+```javascript
+function add(a, b) {
+  return a + b;
+}
+```
+
+### Function Expression:
+
+You can also create a function using a function expression. <u>In this case, you define an anonymous function and assign it to a variable</u>.
+
+Example:
+
+```javascript
+const subtract = function (a, b) {
+  return a - b;
+};
+```
+
+### Arrow Functions:
+
+ES6 introduced arrow functions, a concise way to write functions. They are especially <u>useful for short, anonymous functions</u>.
+
+Example:
+
+```javascript
+const multiply = (a, b) => a * b;
+```
+
+### Function Invocation:
+
+You can **call or invoke** a function by using its name followed by parentheses containing the arguments.
+
+Example:
+
+```javascript
+const result = add(3, 5); // result is now 8
+```
+
+### Parameters and Arguments:
+
+**Parameters** are the variables listed in a function's definition, while **arguments** are the values passed into the function when it is called.
+
+Example:
+
+```javascript
+function greet(name) {
+  console.log('Hello, ' + name + '!');
+}
+
+greet('Alice'); // Output: Hello, Alice!
+```
+
+### Return Statement:
+
+Functions can return a value using the **return keyword**. <u>If no return statement is present, the function returns undefined.</u>
+
+Example:
+
+```javascript
+function square(x) {
+  return x * x;
+}
+
+const result = square(4); // this means 4*4, and the result is now 16
+```
+
+### Scope:
+
+Variables declared inside a function are scoped to that function and are not accessible outside of it.
+
+### Higher-Order Functions:
+
+JavaScript supports higher-order functions, which are functions that can take other functions as arguments or return them.
+
+Example:
+
+```javascript
+function operate(a, b, operation) {
+  return operation(a, b);
+}
+
+const result = operate(3, 4, add); // result is now 7
+```
+
+These are the basic concepts of functions in JavaScript. They play a crucial role in creating modular and maintainable code.
+
+```javascript
+// This is function
+function logger() {
+  console.log('My name is Kostadin');
+}
+//This is colled / Calling / Running / Invoking the function
+logger();
+```
+
+Javascript task:
+
+```javascript
+function fruitProcessor(apples, oranges) {
+  const juice = `Juice with ${apples} apples, and ${oranges} oranges.`;
+  return juice;
+}
+
+const appleJuice = fruitProcessor(5, 0);
+console.log(appleJuice);
+// Without capturing the value into a variable
+console.log(fruitProcessor(5, 0));
+
+// Making onother juice with the same function
+const appleOrangeJuice = fruitProcessor(2, 4);
+console.log(appleOrangeJuice);
+```
+
+---
+
+## 18. Function Declarations vs. Expressions
+
 ---
 
 ## 00A. DOM and Events fundamentals

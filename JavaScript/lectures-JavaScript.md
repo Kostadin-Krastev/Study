@@ -1104,6 +1104,433 @@ console.log(appleOrangeJuice);
 
 ## 18. Function Declarations vs. Expressions
 
+In JavaScript, there are two main ways to define functions: **Function Declarations** and **Function Expressions**. While both methods allow you to create functions, there are some key differences in how they are defined and hoisted.
+
+### Function Declarations
+
+A **function declaration** is a statement that defines a named function. It starts with the function keyword, followed by the function name, a list of parameters enclosed in parentheses, and the function body enclosed in curly braces.
+
+Example:
+
+```javascript
+function add(a, b) {
+  return a + b;
+}
+```
+
+<u>One important characteristic of function declarations is **hoisting**</u>. In JavaScript, function declarations are hoisted to the top of their containing scope, meaning you can call the function before its actual declaration in the code.
+
+Example:
+
+```javascript
+console.log(add(2, 3)); // Works even though add is called before its declaration
+
+function add(a, b) {
+  return a + b;
+}
+```
+
+### Function Expressions
+
+A **function expression** defines a function as part of an expression. <u>In this case, you assign the function to a variable.</u> The function can be anonymous (no name) or have a name.
+
+Example:
+
+```javascript
+const subtract = function (a, b) {
+  return a - b;
+};
+```
+
+Function expressions are not hoisted in the same way as function declarations. If you try to call a function expression before its definition, you'll encounter an error.
+
+Example:
+
+```javascript
+// This would result in an error
+console.log(subtract(5, 2));
+
+const subtract = function (a, b) {
+  return a - b;
+};
+```
+
+### Named Function Expression
+
+You can also have a **named function expression**, where the function has a name that can be used within the function itself. This can be useful for recursion or debugging.
+
+Example:
+
+```javascript
+const multiply = function multiply(a, b) {
+  return a * b;
+};
+```
+
+In summary, both function declarations and function expressions allow you to define functions in JavaScript, <u>but they differ in hoisting behavior</u> and how they are defined in the code. **Function declarations are hoisted**, while **function expressions are not**, and they must be defined before they are called. Choose the appropriate method based on your coding needs and style preferences.
+
+#### This is Function Declaration
+
+```javascript
+function calcAge1(birthYear) {
+  return 2037 - birthYear;
+}
+
+const age1 = calcAge1(1991);
+console.log(age1);
+```
+
+#### This is Function Expression
+
+```javascript
+const calcAge2 = function (birthYear) {
+  return 2037 - birthYear;
+};
+
+const age2 = calcAge2(1991);
+console.log(age1, age2);
+```
+
+---
+
+## 19. Arrow Functions
+
+**Arrow functions** are a concise way <u>to write anonymous functions</u> in JavaScript. They were introduced in ECMAScript 6 (ES6) and provide a shorter syntax compared to traditional function expressions. Arrow functions are especially useful for short, simple functions.
+Here's the basic syntax:
+
+```javascript
+// Traditional Function Expression
+const add = function (a, b) {
+  return a + b;
+};
+
+// Arrow Function
+const addArrow = (a, b) => a + b;
+```
+
+### Key features of arrow functions:
+
+1. **Concise Syntax**:
+
+Arrow functions have a more concise syntax, especially when the function body consists of a single expression. If the function has only one parameter and a single statement, you can omit the parentheses and curly braces.
+
+Example:
+
+```javascript
+// Traditional Function Expression
+const square = function (x) {
+return x \* x;
+};
+
+// Arrow Function
+const squareArrow = x => x * x;
+```
+
+2. **No Binding of this**:
+
+Arrow functions do not bind their own this value. Instead, they inherit the this value from the enclosing scope. This behavior is often desirable when working with object methods or callback functions.
+
+Example:
+
+```javascript
+function Person() {
+  this.age = 0;
+
+  // Traditional Function Expression
+  setInterval(function growUp() {
+    // In this context, `this` does not refer to the Person object
+    this.age++;
+  }, 1000);
+
+  // Arrow Function
+  setInterval(() => {
+    // In this context, `this` refers to the Person object
+    this.age++;
+  }, 1000);
+}
+```
+
+3. **No arguments Object**:
+
+<u>Arrow functions do not have their own arguments object</u>. If you need access to the arguments, you should use the rest parameters (...).
+
+Example:
+
+```javascript
+// Traditional Function Expression
+function sum() {
+  let result = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    result += arguments[i];
+  }
+  return result;
+}
+
+// Arrow Function
+const sumArrow = (...args) => args.reduce((acc, val) => acc + val, 0);
+```
+
+Arrow functions are a powerful addition to JavaScript, but it's essential to be aware of their behavior, especially regarding the handling of this and the lack of an arguments object. They are commonly used in modern JavaScript code for their brevity and clarity.
+
+```javascript
+// Arrow function
+const calcAge = (birthYear) => 2037 - birthYear;
+const age = calcAge(1991);
+console.log(age);
+
+const yearsUntilRetirement = (birthYear, firstName) => {
+  const age = 2037 - birthYear;
+  const retirement = 65 - age;
+  return `${firstName} retires after ${retirement} years`;
+};
+
+console.log(yearsUntilRetirement(1991, 'Kostadin'));
+```
+
+---
+
+### 20. Functions Calling Other Functions
+
+In JavaScript, you can have functions call other functions, which is a fundamental concept in programming known as function composition. This allows you to break down complex problems into smaller, more manageable parts.
+
+Here's a basic example to illustrate function calling in JavaScript:
+
+```javascript
+// Function that adds two numbers
+function add(a, b) {
+  return a + b;
+}
+
+// Function that squares a number
+function square(x) {
+  return x * x;
+}
+
+// Function that combines the above functions
+function addAndSquare(c, d) {
+  // Calling the add function
+  const sum = add(c, d);
+
+  // Calling the square function
+  const result = square(sum);
+
+  return result;
+}
+```
+
+Example usage:
+
+```javascript
+const result = addAndSquare(2, 3);
+console.log(result); // Output: 25
+```
+
+In this example, the addAndSquare function calls both the add and square functions to perform a sequence of operations. This makes the code more modular and easier to understand.
+
+Here are the steps in the addAndSquare function:
+
+1. It calls the add function with parameters c and d and stores the result in the variable sum.
+
+2. Then calls the square function with the result from step 1 (sum) and stores the final result in the variable result.
+
+3. The final result is returned.
+
+```javascript
+function cutFruitPieces(fruit) {
+  return fruit * 4;
+}
+
+function fruitProcessor(apples, oranges) {
+  const applePieces = cutFruitPieces(apples); // calling function cutFruitPieces and storing it in variable applePieces
+  const orangePieces = cutFruitPieces(oranges); // calling function cutFruitPieces and storing it in variable orangePieces
+  const juice = `Juice with ${applePieces} pieces of apple, and ${orangePieces} pieces of orange.`;
+  return juice;
+}
+
+console.log(fruitProcessor(2, 3));
+```
+
+---
+
+## 21. Reviewing Functions
+
+- **Function declarations** are functions that can be used before it's declared in the code.
+- **Function expresion** are functions that are value stored in a variable.
+- **Arrow functions** they are also function expresions, and are great for one-line functions.
+
+```javascript
+const calcAge = function (birthYear) {
+  return 2037 - birthYear;
+};
+
+const yearsUntilRetirement = function (birthYear, firstName) {
+  const age = calcAge(birthYear);
+  const retirement = 65 - age;
+
+  if (retirement > 0) {
+    return `${firstName} retires after ${retirement} years`;
+  } else {
+    return `${firstName} is already retired`;
+  }
+};
+
+console.log(yearsUntilRetirement(1991, 'Jonos'));
+console.log(yearsUntilRetirement(1970, 'Mike'));
+```
+
+---
+
+## 22. Introduction to Arrays
+
+An array is a special variable, which can hold more than one value.
+
+Example:
+
+```javascript
+const cars = ['Saab', 'Volvo', 'BMW'];
+```
+
+In JavaScript, an array is a data structure that allows you to store and organize multiple values. Arrays can hold elements of different data types, and they are one of the most commonly used data structures in JavaScript.
+
+You can declare an array using the Array constructor or using the array literal syntax []
+
+Example:
+
+```javascript
+// Using array literal syntax
+const myArrayLiteral = [];
+```
+
+Using **Array constructor** <u>(always we have to use the keyword 'new')</u>
+
+```javascript
+const myArray = new Array();
+```
+
+### Why Use Arrays?
+
+If you have a list of items (a list of car names, for example), storing the cars in single variables could look like this:
+
+```javascript
+const car1 = 'Saab';
+const car2 = 'Volvo';
+const car3 = 'BMW';
+```
+
+However, what if you want to loop through the cars and find a specific one? And what if you had not 3 cars, but 300?
+
+The solution is an array!
+
+An array can hold many values under a single name, and you can access the values by referring to an index number.
+
+### Creating an Array:
+
+Using an array literal is the easiest way to create a JavaScript Array.
+<u>It is a common practice to declare arrays with the **const** keyword</u>.
+
+Example:
+
+```javascript
+const cars = ['Saab', 'Volvo', 'BMW'];
+```
+
+Spaces and line breaks are not important. A declaration can span multiple lines.
+
+Example:
+
+```javascript
+const cars = ['Saab', 'Volvo', 'BMW'];
+```
+
+You can also create an array, and then provide the elements.
+
+Example:
+
+```javascript
+const cars = [];
+cars[0] = 'Saab';
+cars[1] = 'Volvo';
+cars[2] = 'BMW';
+```
+
+### Using the JavaScript Keyword new:
+
+The following example also creates an Array, and assigns values to it.
+
+Example:
+
+```javascript
+const cars = new Array('Saab', 'Volvo', 'BMW');
+```
+
+The two examples above do exactly the same. There is no need to use new Array().
+<u>For simplicity, readability and execution speed, use the array literal method.</u>
+
+### Accessing Array Elements:
+
+You access an array element by referring to the index number.
+
+Example:
+
+```javascript
+const cars = ['Saab', 'Volvo', 'BMW'];
+console.log(cars[0]); // this will call "Saab" car, because [0] is the first element. [1] is the second element.
+```
+
+<u>Note: </u>
+Array indexes start with 0.
+[0] is the first element. [1] is the second element.
+
+### Array Length:
+
+The length property of an array gives you the number of elements in the array.
+
+Example:
+
+```javascript
+//Array
+const cars = new Array('Saab', 'Volvo', 'BMW');
+console.log(cars.length); // the answer is 3. It is not 0 based so it will count the cars from 1, and there are 3 cars (Saab, Volvo, and BMW)
+```
+
+The length property is always one more than the highest array index. So wen we accessing the last element in the Array we are using - 1, not - 2.
+
+### Accessing the Last Array Element:
+
+Example:
+
+```javascript
+const fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
+console.log(fruits[fruits.length - 1]); // the result will be Mango. if its - 2 it will be Apple. This is because the length property is always one more than the highest array index.
+```
+
+### Changing an Array Element:
+
+This statement changes the value of the first element in cars:
+
+```javascript
+cars[0] = 'Opel'; // cars is the name of the Array, [0] is the position of the element we want to change, and "Opel" is the new element.
+```
+
+Example:
+
+```javascript
+const cars = ['Saab', 'Volvo', 'BMW'];
+cars[0] = 'Opel';
+```
+
+<u>**Important!**</u>
+We cannot replace the entire Array at once. I need to understand more about that!!!
+
+Example:
+
+```javascript
+const cars = ['Saab', 'Volvo', 'BMW'];
+cars = cars[('Opel', 'Mercedes', 'Audi')];
+```
+
+### Putting Array inside of an Array:
+
 ---
 
 ## 00A. DOM and Events fundamentals

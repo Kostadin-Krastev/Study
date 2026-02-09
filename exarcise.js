@@ -1,16 +1,7 @@
-function sumArr(input) {
-  while (input.length > 1) {
-    let condenceArr = [];
-
-    for (let i = 0; i < input.length - 1; i++) {
-      let arrValue = input[i] + input[i + 1];
-
-      condenceArr.push(arrValue);
-    }
-    input = condenceArr;
-  }
-
-  console.log(input);
-}
-
-sumArr([2, 10, 3]);
+'use strict';
+/*
+A car started from the city of Sofia to the city of Berlin at a speed of x km / h, and 2
+hours later another car went to the same destination at a speed y km / h. How many
+kilometers will be the distance between the two cars 3 hours after the departure of the
+second car?
+ */

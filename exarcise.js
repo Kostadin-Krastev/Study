@@ -1,11 +1,5 @@
 'use strict';
 /*
-Write a function that prints the numbers from 1 to 100, each on a new line.
+Write a function that accepts a positive number n and prints the numbers from n to 1 in
+reverse order (from largest to smallest).
 */
-const printNumbers = function () {
-  for (let numbers = 1; numbers <= 100; numbers++) {
-    console.log(numbers);
-  }
-};
-
-printNumbers();

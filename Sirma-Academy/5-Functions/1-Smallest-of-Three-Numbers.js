@@ -27,3 +27,11 @@ function printSmallestNumber(integer1, integer2, integer3) {
 }
 
 printSmallestNumber(integer1, integer2, integer3);
+
+// second solution using the Math.min method
+
+const printSmallest = function (inputA, inputB, inputC) {
+  return Math.min(inputA, inputB, inputC);
+};
+
+console.log(printSmallest(600, 342, 123));

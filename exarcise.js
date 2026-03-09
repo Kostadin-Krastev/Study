@@ -1,18 +1,23 @@
 'use strict';
-
 /*
-Write a JS function which receive three integer numbers to print the smallest of the
-three integer numbers. Use appropriate name for the function.
+You will receive 3 integers. Write a JS function sum to get the sum of the first two
+integers and subtract function that subtracts the third integer from the result from the
+Sum function.
  */
+let firstInteger = 23;
+let secondInteger = 6;
+let thirdInteger = 10;
 
-const printSmallest = function (inputA, inputB, inputC) {
-  if (inputA < inputB && inputA < inputC) {
-    console.log(inputA);
-  } else if (inputB < inputA && inputB < inputC) {
-    console.log(inputB);
-  } else {
-    console.log(inputC);
-  }
+const sum = function (inputA, inputB) {
+  const additionSum = inputA + inputB;
+
+  return additionSum;
 };
 
-printSmallest(600, 342, 123);
+const subtractSum = function (inputFunction, inputC) {
+  const subtractResult = inputFunction - inputC;
+
+  return subtractResult;
+};
+
+console.log(subtractSum(sum(firstInteger, secondInteger), thirdInteger));

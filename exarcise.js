@@ -1,15 +1,6 @@
 'use strict';
+
 /*
-Write a function that accepts a positive number n and prints the numbers from n to 1 in
-reverse order (from largest to smallest).
-*/
-
-let number = 10;
-number = 5;
-
-const printNumbersRevesed = function (number) {
-  for (let i = number; i >= 1; i--) {
-    console.log(i);
-  }
-};
-printNumbersRevesed(number);
+Write a JS function which receive three integer numbers to print the smallest of the
+three integer numbers. Use appropriate name for the function.
+ */

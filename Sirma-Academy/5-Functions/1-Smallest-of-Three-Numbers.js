@@ -29,9 +29,23 @@ function printSmallestNumber(integer1, integer2, integer3) {
 printSmallestNumber(integer1, integer2, integer3);
 
 // second solution using the Math.min method
-
 const printSmallest = function (inputA, inputB, inputC) {
   return Math.min(inputA, inputB, inputC);
 };
 
 console.log(printSmallest(600, 342, 123));
+
+// Third solution using for loop
+const printSmallest = function (inputA, inputB, inputC) {
+  let numbers = [inputA, inputB, inputC];
+  let smallestNumber = numbers[0];
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] < smallestNumber) {
+      smallestNumber = numbers[i];
+    }
+  }
+  console.log(smallestNumber);
+};
+
+printSmallest(600, 342, 123);

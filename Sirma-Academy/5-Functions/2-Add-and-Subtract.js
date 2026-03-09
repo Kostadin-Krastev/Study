@@ -5,27 +5,20 @@ integers and subtract function that subtracts the third integer from the result 
 Sum function.
  */
 
-// Test data 1
-let integer1 = 23;
-let integer2 = 6;
-let integer3 = 10;
-// Test data 2
-integer1 = 1;
-integer2 = 17;
-integer3 = 30;
-// Test data 3
-integer1 = 42;
-integer2 = 58;
-integer3 = 100;
+let firstInteger = 23;
+let secondInteger = 6;
+let thirdInteger = 10;
 
-function sumOfFirstTwoNumburs(integer1, integer2) {
-  const result = integer1 + integer2 - integer3;
-  return result;
-}
+const sum = function (inputA, inputB) {
+  const additionSum = inputA + inputB;
 
-function subtractNumbers(integer1, integer2, integer3) {
-  const result = sumOfFirstTwoNumburs(integer1, integer2, integer3);
-  console.log(result);
-}
+  return additionSum;
+};
 
-subtractNumbers(integer1, integer2, integer3);
+const subtractSum = function (inputFunction, inputC) {
+  const subtractResult = inputFunction - inputC;
+
+  return subtractResult;
+};
+
+console.log(subtractSum(sum(firstInteger, secondInteger), thirdInteger));

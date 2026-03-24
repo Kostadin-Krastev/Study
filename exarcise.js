@@ -1,26 +1,20 @@
 'use strict';
 /*
-Calculate the daily water consumption per person in a household. Given the total water
-consumption in liters for a week and the number of people in the household, find out the daily
-consumption per person.
+Write a function that takes an hour and minutes of a 24-hour day and calculates what
+time it will be after 15 minutes. Print the result in hours:minutes format.
 
-Use the formula
-Daily consumption per person = Total weekly consumption / 7 * Number of people
- */
+Hours are always between 0 and 23, and minutes are always between 0 and 59. Hours
+are written in one or two digits.
 
-// store water consumption and people in household
-let waterWeeklyConsumption = 2450;
-waterWeeklyConsumption = 3150;
-let numberPeople = 7;
-numberPeople = 10;
+Minutes are always written with two digits, with a leading zero when necessary.
 
-const calcWaterConsumptionPerPerson = function (inputWater, inputPeople) {
-  // calculate the daily water consumption per person
-  const dailyWaterConsum = inputWater / (7 * inputPeople);
+Try to find out how to add 0s in front of a number here:
+https://www.google.com/search?q=js+print+number+with+leading+zeros
+*/
 
-  return dailyWaterConsum.toFixed(2);
+let hour = 1;
+let minutes = 47;
+
+const calculateTime = function (inputHour, inputMinutes) {
+  const addedTime = 15;
 };
-
-console.log(
-  calcWaterConsumptionPerPerson(waterWeeklyConsumption, numberPeople),
-);

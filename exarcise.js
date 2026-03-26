@@ -1,34 +1,8 @@
 'use strict';
 /*
-Write a function that takes an hour and minutes of a 24-hour day and calculates what
-time it will be after 15 minutes. Print the result in hours:minutes format.
-
-Hours are always between 0 and 23, and minutes are always between 0 and 59. Hours
-are written in one or two digits.
-
-Minutes are always written with two digits, with a leading zero when necessary.
-
-Try to find out how to add 0s in front of a number here:
-https://www.google.com/search?q=js+print+number+with+leading+zeros
-*/
-
-let hour = 1;
-hour = 11;
-let minutes = 47;
-minutes = 0o7;
-
-const calculateTime = function (inputHour, inputMinutes) {
-  let addedTime = inputMinutes + 15;
-
-  if (addedTime > 59) {
-    addedTime = addedTime - 60;
-    inputHour++;
-    if (inputHour > 23) {
-      inputHour = 0;
-    }
-  }
-  addedTime = addedTime.toString().padStart(2, '0');
-  return `${inputHour}:${addedTime}`;
-};
-
-console.log(calculateTime(hour, minutes));
+Write a console program that assumes age (real number) and gender ('m' or 'f'), and
+prints a reference among the following: 
+• "Mr." — male (sex 'm') 16 years of age or older 
+• "Master" – boy (gender 'm') under 16 years
+• "Ms." — woman (sex 'f') 16 years of
+ */

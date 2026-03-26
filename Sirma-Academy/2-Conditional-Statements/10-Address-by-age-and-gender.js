@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 /*
 Write a console program that assumes age (real number) and gender ('m' or 'f'), and prints a reference among the following: 
 • "Mr." — male (sex 'm') 16 years of age or older 
@@ -12,24 +12,31 @@ let age = 14;
 age = 17;
 age = 10;
 age = 32;
-let gender = "f";
-gender = "m";
-gender = "m";
-gender = "f";
+let gender = 'f';
+gender = 'm';
+gender = 'm';
+gender = 'f';
 
 const addressByAgeAndGender = function (age, gender) {
-  if (gender === "f") {
+  if (gender === 'f') {
     if (age <= 16) {
-      console.log("Miss");
+      console.log('Miss');
     } else {
-      console.log("Ms.");
+      console.log('Ms.');
     }
-  } else if (gender === "m") {
+  } else if (gender === 'm') {
     if (age <= 16) {
-      console.log("Master");
+      console.log('Master');
     } else {
-      console.log("Mr.");
+      console.log('Mr.');
     }
+  }
+
+  // BETTER SOLUTION!!!
+  if (inputGender === 'f') {
+    console.log(inputAge >= 16 ? 'Ms.' : 'Miss.');
+  } else if (inputGender === 'm') {
+    console.log(inputAge >= 16 ? 'Mr.' : 'Master');
   }
 };
 

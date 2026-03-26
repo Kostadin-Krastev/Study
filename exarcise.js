@@ -13,8 +13,22 @@ https://www.google.com/search?q=js+print+number+with+leading+zeros
 */
 
 let hour = 1;
+hour = 11;
 let minutes = 47;
+minutes = 0o7;
 
 const calculateTime = function (inputHour, inputMinutes) {
-  const addedTime = 15;
+  let addedTime = inputMinutes + 15;
+
+  if (addedTime > 59) {
+    addedTime = addedTime - 60;
+    inputHour++;
+    if (inputHour > 23) {
+      inputHour = 0;
+    }
+  }
+  addedTime = addedTime.toString().padStart(2, '0');
+  return `${inputHour}:${addedTime}`;
 };
+
+console.log(calculateTime(hour, minutes));

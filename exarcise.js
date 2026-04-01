@@ -1,22 +1,17 @@
 'use strict';
 /*
-Write a console program that assumes age (real number) and gender ('m' or 'f'), and
-prints a reference among the following: 
-• "Mr." — male (sex 'm') 16 years of age or older 
-• "Master" – boy (gender 'm') under 16 years
-• ""Ms." — woman (sex 'f') 16 years of age or older
- */
+Write a function that prints the hours of the day from 0:0 to 23:59, each on a separate
+line. Hours must be written in the format '{hour}:{minutes}'.
+*/
 
-let age = 14;
-age = 17;
-let gender = 'f';
-gender = 'm';
-
-const adressByAgeGender = function (inputAge, inputGender) {
-  if (inputGender === 'f') {
-    console.log(inputAge >= 16 ? 'Ms.' : 'Miss.');
-  } else if (inputGender === 'm') {
-    console.log(inputAge >= 16 ? 'Mr.' : 'Master');
+const clock = function () {
+  for (let hour = 0; hour <= 23; hour++) {
+    for (let minutes = 0; minutes < 60; minutes++) {
+      console.log(
+        `${String(hour).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`,
+      );
+    }
   }
 };
-adressByAgeGender(age, gender);
+
+clock();

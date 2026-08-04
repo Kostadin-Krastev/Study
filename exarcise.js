@@ -1,24 +1,6 @@
 'use strict';
 /*
-Calculate the average speed of a vehicle that has traveled a certain distance D in kilometers
-over a given time T in hours.
-Use the formula Average Speed = D / T.
-
-On the first line, you receive the distance D in kilometers.
-On the second line, you receive the time T in hours.
+Calculate the fuel efficiency of a car given the total distance traveled D in kilometers and the
+total fuel consumed F in liters.
+Use the formula: Fuel Efficiency = D / F
 */
-
-let distanceKm = 200;
-distanceKm = 150;
-distanceKm = 300;
-let timeHours = 2;
-timeHours = 3;
-timeHours = 5;
-
-const calculateAverageSpeed = function (distanceKm, timeHours) {
-  const averageSpeed = distanceKm / timeHours;
-
-  return averageSpeed.toFixed(2);
-};
-
-console.log(calculateAverageSpeed(distanceKm, timeHours));

@@ -1,22 +1,14 @@
 'use strict';
 /*
-Calculate the circumference of a circle given its radius R.
-Use the formula: Circumference = 2 * pi * R
-On the first line, you receive the radius R.
-INPUT       OUTPUT
-5           31.42
-7           43.96
-10          62.83
+A chain of stores opens groceries in several cities and sells at different prices according to
+the city:
+Write a program that accepts a product (string), city (string) and quantity (decimal
+number) and calculates and prints how much the corresponding quantity of the selected
+product costs in the specified city.
+
+Input                       Output
+f("tea", "Varna", 2)        0.90
+f("chips", "Plovdiv", 1)    1.50
+f("juice", "Sofia", 6)      7.20
+f("sweets", "Plovdiv", 1)   1.50
 */
-
-let radius = 5;
-radius = 7;
-radius = 10;
-
-const calculateCircumference = function (radius) {
-  const calculatingCircumferenceFormula = 2 * 3.14159 * radius;
-
-  return calculatingCircumferenceFormula.toFixed(2);
-};
-
-console.log(calculateCircumference(radius));

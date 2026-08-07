@@ -1,24 +1,10 @@
 'use strict';
 /*
-Calculate the fuel efficiency of a car given the total distance traveled D in kilometers and the
-total fuel consumed F in liters.
-Use the formula: Fuel Efficiency = D / F
-
-INPUT           OUTPUT
-500, 40         12.50
-600, 40         15.00
-750, 40         18.75
+Calculate the circumference of a circle given its radius R.
+Use the formula: Circumference = 2 * pi * R
+On the first line, you receive the radius R.
+INPUT       OUTPUT
+5           31.42
+7           43.96
+10          62.83
 */
-
-let totalDistanceKm = 500;
-totalDistanceKm = 600;
-totalDistanceKm = 750;
-let totalFuelConsumed = 40;
-
-const calculateFuelEfficiency = function (totalDistanceKm, totalFuelConsumed) {
-  const fullEfficiency = totalDistanceKm / totalFuelConsumed;
-
-  return `The fuel efficiency of a car base of total distance ${totalDistanceKm}, and the total fuel consumed ${totalFuelConsumed} is ${fullEfficiency.toFixed(2)}`;
-};
-
-console.log(calculateFuelEfficiency(totalDistanceKm, totalFuelConsumed));
